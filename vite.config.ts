@@ -10,7 +10,7 @@ const __dirname = path.dirname(__filename);
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: process.env.VERCEL ? "/" : "/GENCSURAIKLIM/",
+  base: process.env.VITE_BASE_PATH || "/GENCSURAIKLIM/",
   plugins: [react(), tailwindcss(), viteSingleFile()],
   resolve: {
     alias: {
