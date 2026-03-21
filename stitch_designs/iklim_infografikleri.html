@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary-fixed-dim": "#d6efd7",
+              "surface-container-highest": "#1a291e",
+              "surface-container-lowest": "#000000",
+              "outline-variant": "#3f4b41",
+              "on-primary-fixed-variant": "#006a2d",
+              "on-background": "#edfaec",
+              "on-primary-fixed": "#004a1d",
+              "tertiary": "#eaffea",
+              "surface": "#061009",
+              "primary-container": "#0abc56",
+              "inverse-on-surface": "#4c584e",
+              "tertiary-fixed": "#e4fde5",
+              "tertiary-dim": "#d6efd7",
+              "surface-container-high": "#142318",
+              "on-error": "#450900",
+              "primary-dim": "#5bf083",
+              "on-error-container": "#ffd2c8",
+              "on-surface-variant": "#a1aea2",
+              "secondary-fixed": "#8ff8b4",
+              "background": "#061009",
+              "on-surface": "#edfaec",
+              "secondary-dim": "#81eaa7",
+              "on-secondary": "#005f35",
+              "surface-dim": "#061009",
+              "secondary-container": "#006d3e",
+              "primary-fixed-dim": "#5bf083",
+              "tertiary-container": "#d9f1da",
+              "surface-container": "#0f1c13",
+              "outline": "#6c796d",
+              "primary": "#6bff8f",
+              "on-primary": "#005f28",
+              "on-primary-container": "#002c0f",
+              "surface-bright": "#1f3024",
+              "on-tertiary-container": "#475c4a",
+              "inverse-surface": "#f0fdef",
+              "on-secondary-container": "#e2ffe7",
+              "error-dim": "#d53d18",
+              "error": "#ff7351",
+              "surface-container-low": "#0a160e",
+              "secondary-fixed-dim": "#81eaa7",
+              "surface-tint": "#6bff8f",
+              "secondary": "#8ff8b4",
+              "on-secondary-fixed-variant": "#006a3c",
+              "on-tertiary-fixed": "#3b503f",
+              "surface-variant": "#1a291e",
+              "error-container": "#b92902",
+              "on-tertiary-fixed-variant": "#576d5b",
+              "primary-fixed": "#6bff8f",
+              "on-tertiary": "#4f6452",
+              "inverse-primary": "#006e2f",
+              "on-secondary-fixed": "#004a28"
+            },
+            fontFamily: {
+              "headline": ["Inter"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(26, 41, 30, 0.6);
+            backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface selection:bg-primary selection:text-on-primary">
+<!-- TopNavBar Section -->
+<nav class="fixed top-0 w-full z-50 bg-emerald-950/60 backdrop-blur-xl shadow-[0_20px_40px_rgba(0,0,0,0.4)]">
+<div class="flex justify-between items-center px-8 h-20 max-w-screen-2xl mx-auto">
+<div class="text-2xl font-black text-emerald-400 tracking-tighter">Biolume Climate</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-inter tracking-tight font-bold text-sm uppercase text-emerald-100/70 hover:text-emerald-100 transition-all duration-300" href="#">Keşfet</a>
+<a class="font-inter tracking-tight font-bold text-sm uppercase text-emerald-100/70 hover:text-emerald-100 transition-all duration-300" href="#">Projeler</a>
+<a class="font-inter tracking-tight font-bold text-sm uppercase text-emerald-400 border-b-2 border-emerald-400 pb-1" href="#">Etki</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 rounded-full hover:bg-emerald-800/40 transition-all duration-300 text-emerald-100 scale-95 active:scale-90">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+<button class="p-2 rounded-full hover:bg-emerald-800/40 transition-all duration-300 text-emerald-100 scale-95 active:scale-90">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 rounded-full hover:bg-emerald-800/40 transition-all duration-300 text-emerald-100 scale-95 active:scale-90">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</button>
+</div>
+</div>
+</nav>
+<main class="pt-32 pb-24 px-6 md:px-12 max-w-7xl mx-auto">
+<!-- Hero Title -->
+<header class="mb-20">
+<h1 class="text-6xl md:text-8xl font-black tracking-tighter text-on-surface mb-6 leading-none">İnfografikler</h1>
+<p class="text-on-surface-variant text-lg md:text-xl max-w-2xl leading-relaxed">
+                Gezegenimizin nabzını tutan veriler, görsel bir ekosistemde hayat buluyor. İklim krizinin kritik noktalarını biolüminesans ışığıyla keşfedin.
+            </p>
+</header>
+<!-- Küresel Isınma Section -->
+<section class="mb-32">
+<div class="flex items-end justify-between mb-10">
+<div>
+<span class="text-primary font-bold tracking-widest uppercase text-xs">Kritik Veri Seti 01</span>
+<h2 class="text-4xl font-bold tracking-tight mt-2">Küresel Isınma</h2>
+</div>
+<div class="h-[2px] flex-grow mx-8 bg-surface-container-highest hidden md:block"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Large Feature Card -->
+<div class="md:col-span-8 glass-panel rounded-lg p-10 flex flex-col justify-between min-h-[400px] border border-outline-variant/20 relative overflow-hidden">
+<div class="absolute -right-20 -top-20 w-64 h-64 bg-primary/10 rounded-full blur-[100px]"></div>
+<div class="relative z-10">
+<span class="material-symbols-outlined text-primary text-5xl mb-6" data-icon="thermostat" style="font-variation-settings: 'FILL' 1;">thermostat</span>
+<h3 class="text-3xl font-bold mb-4 leading-tight">Sıcaklık Anomalisi</h3>
+<p class="text-on-surface-variant max-w-md">1880'den bu yana küresel ortalama sıcaklık 1.1°C arttı. Bu artışın büyük çoğunluğu 1975'ten sonra gerçekleşti.</p>
+</div>
+<div class="mt-8 flex items-end gap-4 relative z-10">
+<div class="text-7xl font-black text-primary">+1.1°C</div>
+<div class="mb-2 text-sm font-bold text-on-surface-variant uppercase tracking-widest">Küresel Artış</div>
+</div>
+</div>
+<!-- Small Data Cards Stack -->
+<div class="md:col-span-4 flex flex-col gap-6">
+<div class="bg-surface-container rounded-lg p-8 flex flex-col justify-center border border-outline-variant/10">
+<div class="flex items-center gap-4 mb-4">
+<span class="material-symbols-outlined text-secondary text-3xl" data-icon="co2">co2</span>
+<span class="text-sm font-bold uppercase tracking-widest text-on-surface-variant">Atmosferik CO2</span>
+</div>
+<div class="text-4xl font-bold">421 ppm</div>
+<div class="text-xs text-secondary-dim mt-2 font-medium">Milyonda parça (Mayıs 2023)</div>
+</div>
+<div class="bg-primary-container rounded-lg p-8 flex flex-col justify-center text-on-primary-container shadow-[0_0_40px_rgba(10,188,86,0.2)]">
+<div class="flex items-center gap-4 mb-4">
+<span class="material-symbols-outlined text-on-primary-container text-3xl" data-icon="warning">warning</span>
+<span class="text-sm font-bold uppercase tracking-widest opacity-80">Eşik Değer</span>
+</div>
+<div class="text-4xl font-bold">1.5°C</div>
+<div class="text-xs mt-2 font-medium">Paris Anlaşması Kritik Limiti</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Deniz Seviyesi Section -->
+<section class="mb-32">
+<div class="flex items-end justify-between mb-10">
+<div class="order-2 text-right">
+<span class="text-secondary font-bold tracking-widest uppercase text-xs">Kritik Veri Seti 02</span>
+<h2 class="text-4xl font-bold tracking-tight mt-2">Deniz Seviyesi</h2>
+</div>
+<div class="h-[2px] flex-grow mx-8 bg-surface-container-highest hidden md:block order-1"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Bento Grid Style 1 -->
+<div class="bg-surface-container rounded-lg p-8 hover:bg-surface-container-high transition-colors group">
+<span class="material-symbols-outlined text-secondary text-4xl mb-6 group-hover:scale-110 transition-transform" data-icon="water_drop">water_drop</span>
+<h4 class="text-xl font-bold mb-3">Yıllık Yükselme</h4>
+<div class="text-5xl font-black text-secondary mb-4">3.4mm</div>
+<p class="text-sm text-on-surface-variant leading-relaxed">Uydu verilerine göre deniz seviyeleri her yıl ortalama bu hızla yükselmektedir.</p>
+</div>
+<!-- Bento Grid Style 2 (Image/Data Overlay) -->
+<div class="bg-surface-container-highest rounded-lg relative overflow-hidden min-h-[300px] flex items-end p-8 border border-outline-variant/30">
+<div class="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-80 z-10"></div>
+<div class="absolute inset-0 bg-secondary/10 z-0"></div>
+<div class="relative z-20">
+<h4 class="text-2xl font-bold text-on-surface mb-2">Buzul Kaybı</h4>
+<p class="text-sm text-on-surface-variant mb-4">Antarktika ve Grönland her yıl milyarlarca ton buz kaybediyor.</p>
+<div class="flex items-center gap-2">
+<div class="h-2 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-secondary w-3/4"></div>
+</div>
+<span class="text-xs font-bold text-secondary">75%</span>
+</div>
+</div>
+</div>
+<!-- Bento Grid Style 3 -->
+<div class="bg-surface-container rounded-lg p-8 flex flex-col justify-between">
+<div>
+<span class="material-symbols-outlined text-error text-4xl mb-6" data-icon="flood" style="font-variation-settings: 'FILL' 1;">flood</span>
+<h4 class="text-xl font-bold mb-3">Kıyı Nüfusu</h4>
+<p class="text-sm text-on-surface-variant">2050 yılına kadar 300 milyondan fazla insan yıllık sel baskını riski altında kalacak.</p>
+</div>
+<button class="mt-8 py-3 px-6 bg-surface-container-highest text-secondary text-sm font-bold rounded-full border border-secondary/20 hover:bg-secondary hover:text-on-secondary transition-all">
+                        Detaylı Rapor
+                    </button>
+</div>
+</div>
+</section>
+<!-- Ormansızlaşma Section -->
+<section class="mb-32">
+<div class="flex items-end justify-between mb-10">
+<div>
+<span class="text-primary font-bold tracking-widest uppercase text-xs">Kritik Veri Seti 03</span>
+<h2 class="text-4xl font-bold tracking-tight mt-2">Ormansızlaşma</h2>
+</div>
+<div class="h-[2px] flex-grow mx-8 bg-surface-container-highest hidden md:block"></div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+<!-- Visual Map/Infographic Card -->
+<div class="glass-panel rounded-lg p-1 w-full aspect-video md:aspect-auto border border-outline-variant/20 relative group overflow-hidden">
+<div class="w-full h-full rounded-[22px] bg-surface-container-lowest relative overflow-hidden">
+<div class="absolute inset-0 flex items-center justify-center opacity-40 group-hover:opacity-60 transition-opacity">
+<span class="material-symbols-outlined text-[120px] text-primary/20" data-icon="forest">forest</span>
+</div>
+<div class="absolute inset-0 p-8 flex flex-col justify-end">
+<div class="flex items-center gap-3 mb-4">
+<div class="bg-primary/20 p-2 rounded-lg">
+<span class="material-symbols-outlined text-primary" data-icon="location_on">location_on</span>
+</div>
+<span class="font-bold text-lg">Amazon Havzası</span>
+</div>
+<div class="flex gap-4">
+<div class="bg-surface-container-highest/80 backdrop-blur-md p-4 rounded-lg flex-1">
+<div class="text-xs text-on-surface-variant uppercase font-bold mb-1">Kayıp Oranı</div>
+<div class="text-2xl font-black text-primary">17%</div>
+</div>
+<div class="bg-surface-container-highest/80 backdrop-blur-md p-4 rounded-lg flex-1">
+<div class="text-xs text-on-surface-variant uppercase font-bold mb-1">Kritik Eşik</div>
+<div class="text-2xl font-black text-error">20-25%</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Detailed Info Points -->
+<div class="flex flex-col gap-6">
+<div class="flex gap-6 items-start p-6 rounded-lg bg-surface-container-low border border-transparent hover:border-primary/20 transition-all">
+<div class="bg-primary/10 text-primary p-4 rounded-full">
+<span class="material-symbols-outlined" data-icon="speed">speed</span>
+</div>
+<div>
+<h5 class="font-bold text-xl mb-1">Hız Faktörü</h5>
+<p class="text-on-surface-variant text-sm">Her dakika 27 futbol sahası büyüklüğünde orman alanı yok ediliyor.</p>
+</div>
+</div>
+<div class="flex gap-6 items-start p-6 rounded-lg bg-surface-container-low border border-transparent hover:border-primary/20 transition-all">
+<div class="bg-primary/10 text-primary p-4 rounded-full">
+<span class="material-symbols-outlined" data-icon="diversity_3" style="font-variation-settings: 'FILL' 1;">diversity_3</span>
+</div>
+<div>
+<h5 class="font-bold text-xl mb-1">Biyoçeşitlilik Kaybı</h5>
+<p class="text-on-surface-variant text-sm">Karadaki türlerin %80'i ormanlarda yaşıyor. Habitat kaybı kitlesel yok oluşu tetikliyor.</p>
+</div>
+</div>
+<div class="flex gap-6 items-start p-6 rounded-lg bg-surface-container-low border border-transparent hover:border-primary/20 transition-all">
+<div class="bg-primary/10 text-primary p-4 rounded-full">
+<span class="material-symbols-outlined" data-icon="cloud_sync">cloud_sync</span>
+</div>
+<div>
+<h5 class="font-bold text-xl mb-1">Karbon Yutağı</h5>
+<p class="text-on-surface-variant text-sm">Ormanlar, fosil yakıtlardan kaynaklanan emisyonların yaklaşık %25'ini emiyor.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Call to Action -->
+<section class="mt-40 mb-20 text-center">
+<div class="inline-block p-[1px] rounded-full bg-gradient-to-r from-primary via-secondary to-primary mb-8">
+<div class="bg-background rounded-full px-6 py-2 text-xs font-black uppercase tracking-widest text-primary">
+                    Harekete Geç
+                </div>
+</div>
+<h2 class="text-4xl md:text-6xl font-black tracking-tight mb-8">Geleceği Birlikte Koruyalım</h2>
+<div class="flex flex-col md:flex-row gap-4 justify-center items-center">
+<button class="bg-gradient-to-b from-primary to-primary-container text-on-primary-container px-10 py-4 rounded-full font-bold text-lg shadow-[0_0_20px_rgba(107,255,143,0.3)] hover:scale-105 active:scale-95 transition-all">
+                    Bize Katılın
+                </button>
+<button class="bg-surface-container text-on-surface px-10 py-4 rounded-full font-bold text-lg border border-outline-variant hover:bg-surface-container-high transition-all">
+                    Verileri İndir
+                </button>
+</div>
+</section>
+</main>
+<!-- Footer Section -->
+<footer class="w-full rounded-t-[48px] bg-emerald-950 dark:bg-[#061009] tonal-shift bg-emerald-900/20">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 py-16 gap-8 max-w-screen-2xl mx-auto">
+<div class="flex flex-col gap-4">
+<div class="text-xl font-bold text-emerald-400">Biolume Climate</div>
+<p class="font-inter text-emerald-100/60 text-sm max-w-xs">
+                    Doğanın dijital ikizini oluşturarak iklim eylemini hızlandırıyoruz.
+                </p>
+<div class="font-inter text-emerald-100/60 text-sm mt-4">
+                    © 2024 Biolume Climate. Protected Ecosystem.
+                </div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-2 gap-x-12 gap-y-4">
+<a class="font-inter text-emerald-100/50 text-sm hover:text-emerald-300 transition-colors opacity-80 hover:opacity-100" href="#">Gizlilik Politikası</a>
+<a class="font-inter text-emerald-100/50 text-sm hover:text-emerald-300 transition-colors opacity-80 hover:opacity-100" href="#">Kullanım Şartları</a>
+<a class="font-inter text-emerald-100/50 text-sm hover:text-emerald-300 transition-colors opacity-80 hover:opacity-100" href="#">Bize Ulaşın</a>
+<a class="font-inter text-emerald-400 font-semibold hover:text-emerald-300 transition-colors opacity-80 hover:opacity-100" href="#">Sürdürülebilirlik Raporu</a>
+</div>
+<div class="flex gap-4">
+<div class="w-10 h-10 rounded-full bg-emerald-900/40 flex items-center justify-center text-emerald-400 cursor-pointer hover:bg-emerald-800 transition-all">
+<span class="material-symbols-outlined text-xl" data-icon="public">public</span>
+</div>
+<div class="w-10 h-10 rounded-full bg-emerald-900/40 flex items-center justify-center text-emerald-400 cursor-pointer hover:bg-emerald-800 transition-all">
+<span class="material-symbols-outlined text-xl" data-icon="share">share</span>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

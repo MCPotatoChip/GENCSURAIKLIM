@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>EcoModern | Climate &amp; Pollution Map</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-secondary-fixed": "#004a28",
+              "secondary-dim": "#81eaa7",
+              "error-container": "#b92902",
+              "on-secondary": "#005f35",
+              "on-secondary-container": "#e2ffe7",
+              "surface-container-lowest": "#000000",
+              "primary": "#6bff8f",
+              "background": "#061009",
+              "on-primary-fixed-variant": "#006a2d",
+              "on-surface-variant": "#a1aea2",
+              "on-error-container": "#ffd2c8",
+              "surface-container": "#0f1c13",
+              "inverse-primary": "#006e2f",
+              "on-tertiary": "#4f6452",
+              "on-error": "#450900",
+              "on-secondary-fixed-variant": "#006a3c",
+              "surface-dim": "#061009",
+              "tertiary-dim": "#d6efd7",
+              "surface": "#061009",
+              "on-primary-fixed": "#004a1d",
+              "on-surface": "#edfaec",
+              "error": "#ff7351",
+              "on-tertiary-fixed": "#3b503f",
+              "on-primary": "#005f28",
+              "surface-container-highest": "#1a291e",
+              "on-tertiary-fixed-variant": "#576d5b",
+              "primary-fixed-dim": "#5bf083",
+              "error-dim": "#d53d18",
+              "tertiary-fixed": "#e4fde5",
+              "tertiary-container": "#d9f1da",
+              "tertiary": "#eaffea",
+              "tertiary-fixed-dim": "#d6efd7",
+              "secondary-fixed-dim": "#81eaa7",
+              "outline": "#6c796d",
+              "primary-fixed": "#6bff8f",
+              "secondary-container": "#006d3e",
+              "surface-container-low": "#0a160e",
+              "surface-variant": "#1a291e",
+              "surface-tint": "#6bff8f",
+              "secondary-fixed": "#8ff8b4",
+              "inverse-surface": "#f0fdef",
+              "surface-bright": "#1f3024",
+              "primary-dim": "#5bf083",
+              "on-primary-container": "#002c0f",
+              "outline-variant": "#3f4b41",
+              "secondary": "#8ff8b4",
+              "inverse-on-surface": "#4c584e",
+              "primary-container": "#0abc56",
+              "on-background": "#edfaec",
+              "surface-container-high": "#142318",
+              "on-tertiary-container": "#475c4a"
+            },
+            fontFamily: {
+              "headline": ["Inter"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>body {
+    background-color: #061009;
+    color: #edfaec
+    }
+.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24
+    }
+.biolume-glow:active {
+    box-shadow: 0 0 20px rgba(107, 255, 143, 0.4)
+    }
+.custom-map-layer {
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuD06AZB9dVElozsIu3k2Pv0X5nlSQJmikbdIB2D6ufQ9-UuaYozTju-wTlvDWxTzLNCy8nEygV1xoOXHTSkxI218SDeZmHMIueyEOfRrP6W5pykv11_88WyvH9lsyUhHOfA6PtMMLqXDRQUg__KKnkfQt5abi-rTGsNc0TgvNjBKlGldq0sgwlGXrGtmt4PGZoxYVMa1DA9ScEIi11D0SP5UAFYAo6PPf91qS6wyEi_t6IrU-j5O0CDnEthDRlZnh7HYzEKW00nMs0);
+    background-size: cover;
+    background-position: center
+    }</style>
+</head>
+<body class="font-body selection:bg-primary/30 selection:text-primary overflow-hidden h-screen flex flex-col">
+<!-- TopNavBar Shell -->
+<header class="fixed top-0 w-full z-50 bg-emerald-950/60 backdrop-blur-xl shadow-[0_20px_40px_rgba(0,0,0,0.4)]">
+<div class="flex justify-between items-center px-8 h-20 w-full max-w-7xl mx-auto">
+<div class="text-2xl font-black text-emerald-400 flex items-center gap-2 font-inter tracking-tight">
+<span class="material-symbols-outlined" data-icon="eco">eco</span>
+                EcoModern
+            </div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-emerald-400 font-bold border-b-2 border-emerald-400 font-inter tracking-tight transition-all duration-300" href="#">Live Map</a>
+<a class="text-emerald-100/70 hover:text-emerald-300 font-inter tracking-tight transition-all duration-300" href="#">Sustainability Report</a>
+<a class="text-emerald-100/70 hover:text-emerald-300 font-inter tracking-tight transition-all duration-300" href="#">Carbon Offset</a>
+</nav>
+<div class="flex items-center gap-4">
+<div class="relative group">
+<input class="bg-surface-container-lowest border-none rounded-full py-2 pl-10 pr-4 text-sm focus:ring-2 focus:ring-primary/40 w-48 md:w-64 transition-all" placeholder="Search region..." type="text"/>
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-sm" data-icon="search">search</span>
+</div>
+<button class="p-2 rounded-full hover:bg-emerald-900/40 transition-colors text-emerald-400 active:scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Map Viewport -->
+<main class="relative flex-grow mt-20 overflow-hidden">
+<!-- The Satellite Layer Simulation -->
+<div class="absolute inset-0 custom-map-layer opacity-40 grayscale-[0.5] contrast-[1.2] brightness-[0.7]" data-alt="Satellite dark map view of Earth continents and oceans" data-location="World" style=""></div>
+<!-- Interactive Overlay Layer (Heatmap Glows) -->
+<div class="absolute inset-0 pointer-events-none">
+<div class="absolute top-1/4 left-1/3 w-64 h-64 bg-primary/10 blur-[100px] rounded-full"></div>
+<div class="absolute bottom-1/3 right-1/4 w-96 h-96 bg-error/5 blur-[120px] rounded-full"></div>
+<div class="absolute top-1/2 right-1/3 w-48 h-48 bg-secondary/10 blur-[80px] rounded-full"></div>
+</div>
+<!-- Floating Filters Sidebar (Left) -->
+<aside class="absolute left-8 top-1/2 -translate-y-1/2 z-20 flex flex-col gap-4">
+<div class="bg-surface-variant/70 backdrop-blur-2xl p-4 rounded-lg flex flex-col gap-6 shadow-2xl border border-white/5">
+<div class="flex flex-col gap-4">
+<p class="text-[10px] uppercase tracking-[0.1em] font-bold text-on-surface-variant px-2">Map Layers</p>
+<button class="group flex items-center gap-4 p-3 rounded-lg bg-primary/20 text-primary border border-primary/20 transition-all duration-300">
+<span class="material-symbols-outlined" data-icon="thermostat" style="font-variation-settings: 'FILL' 1;">thermostat</span>
+<span class="text-sm font-semibold">Temperature</span>
+</button>
+<button class="group flex items-center gap-4 p-3 rounded-lg hover:bg-surface-container-highest text-on-surface-variant transition-all duration-300">
+<span class="material-symbols-outlined" data-icon="air">air</span>
+<span class="text-sm font-semibold">Wind Speed</span>
+</button>
+<button class="group flex items-center gap-4 p-3 rounded-lg hover:bg-surface-container-highest text-on-surface-variant transition-all duration-300">
+<span class="material-symbols-outlined" data-icon="water_drop">water_drop</span>
+<span class="text-sm font-semibold">Precipitation</span>
+</button>
+<button class="group flex items-center gap-4 p-3 rounded-lg hover:bg-surface-container-highest text-on-surface-variant transition-all duration-300">
+<span class="material-symbols-outlined" data-icon="co2">co2</span>
+<span class="text-sm font-semibold">CO2 Levels</span>
+</button>
+<button class="group flex items-center gap-4 p-3 rounded-lg hover:bg-surface-container-highest text-on-surface-variant transition-all duration-300">
+<span class="material-symbols-outlined" data-icon="aq">aq</span>
+<span class="text-sm font-semibold">Air Quality</span>
+</button>
+</div>
+<div class="h-px bg-white/5"></div>
+<div class="flex flex-col gap-2">
+<p class="text-[10px] uppercase tracking-[0.1em] font-bold text-on-surface-variant px-2">Visual Style</p>
+<div class="flex gap-2 p-1 bg-surface-container-lowest rounded-full">
+<button class="flex-1 py-2 px-3 rounded-full bg-surface-container-highest text-xs font-bold text-on-surface">Satellite</button>
+<button class="flex-1 py-2 px-3 rounded-full text-xs font-bold text-on-surface-variant hover:text-on-surface">Vector</button>
+</div>
+</div>
+</div>
+</aside>
+<!-- Top Region Selection Bar -->
+<div class="absolute top-8 left-1/2 -translate-x-1/2 z-20 flex justify-center w-full max-w-2xl">
+<div class="bg-surface-variant/60 backdrop-blur-xl px-2 py-2 rounded-full flex items-center gap-1 shadow-xl border border-white/5">
+<button class="px-6 py-2 rounded-full bg-primary text-on-primary-container text-sm font-bold shadow-[0_0_20px_rgba(107,255,143,0.3)] transition-all">Turkey</button>
+<button class="px-6 py-2 rounded-full text-on-surface-variant hover:text-primary hover:bg-white/5 text-sm font-bold transition-all">World</button>
+<button class="px-6 py-2 rounded-full text-on-surface-variant hover:text-primary hover:bg-white/5 text-sm font-bold transition-all">EU</button>
+<button class="px-6 py-2 rounded-full text-on-surface-variant hover:text-primary hover:bg-white/5 text-sm font-bold transition-all">Asia</button>
+<button class="px-6 py-2 rounded-full text-on-surface-variant hover:text-primary hover:bg-white/5 text-sm font-bold transition-all">Africa</button>
+<button class="px-6 py-2 rounded-full text-on-surface-variant hover:text-primary hover:bg-white/5 text-sm font-bold transition-all">America</button>
+</div>
+</div>
+<!-- Right Side Stats Card -->
+<div class="absolute right-8 top-8 z-20 w-80">
+<div class="bg-surface-container/80 backdrop-blur-xl p-6 rounded-lg shadow-2xl space-y-6 border border-white/5">
+<div>
+<h3 class="text-2xl font-black text-on-surface tracking-tight mb-1">Marmara Region</h3>
+<p class="text-sm text-primary font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="location_on">location_on</span>
+                        Istanbul, TR
+                    </p>
+</div>
+<div class="space-y-4">
+<div class="flex justify-between items-end">
+<span class="text-xs font-bold text-on-surface-variant uppercase tracking-widest">Temperature</span>
+<span class="text-3xl font-black text-on-surface">24°C</span>
+</div>
+<div class="w-full h-1 bg-surface-container-lowest rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-primary to-secondary w-[70%]"></div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-surface-container-highest/50 p-3 rounded-lg">
+<p class="text-[10px] text-on-surface-variant uppercase font-bold tracking-tighter">Air Quality</p>
+<p class="text-lg font-bold text-secondary">42 AQI</p>
+</div>
+<div class="bg-surface-container-highest/50 p-3 rounded-lg">
+<p class="text-[10px] text-on-surface-variant uppercase font-bold tracking-tighter">Humidity</p>
+<p class="text-lg font-bold text-on-surface">58%</p>
+</div>
+</div>
+<button class="w-full py-4 rounded-lg bg-gradient-to-b from-primary to-primary-container text-on-primary-container font-black text-sm uppercase tracking-widest biolume-glow transition-all active:scale-95">
+                    View Impact Report
+                </button>
+</div>
+</div>
+<!-- Bottom Data Legend & Timeline -->
+<div class="absolute bottom-8 left-8 right-8 z-20 flex items-end justify-between">
+<!-- Legend -->
+<div class="bg-surface-variant/80 backdrop-blur-xl px-6 py-4 rounded-lg shadow-xl border border-white/5 min-w-[300px]">
+<p class="text-[10px] uppercase font-bold text-on-surface-variant tracking-[0.2em] mb-4">Temperature Heat Map Scale</p>
+<div class="flex items-center gap-0 h-4 rounded-full overflow-hidden mb-2">
+<div class="flex-1 h-full bg-blue-500"></div>
+<div class="flex-1 h-full bg-emerald-500"></div>
+<div class="flex-1 h-full bg-primary"></div>
+<div class="flex-1 h-full bg-yellow-400"></div>
+<div class="flex-1 h-full bg-orange-500"></div>
+<div class="flex-1 h-full bg-error"></div>
+</div>
+<div class="flex justify-between text-[10px] font-bold text-on-surface-variant">
+<span>-10°C</span>
+<span>0°C</span>
+<span>15°C</span>
+<span>30°C</span>
+<span>45°C+</span>
+</div>
+</div>
+<!-- Timeline Control -->
+<div class="bg-surface-container/90 backdrop-blur-2xl p-4 rounded-lg shadow-2xl border border-white/5 w-1/3 min-w-[400px]">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-2">
+<button class="material-symbols-outlined text-primary" data-icon="play_arrow">play_arrow</button>
+<span class="text-sm font-bold text-on-surface">October 24, 2024</span>
+</div>
+<span class="text-[10px] font-bold text-primary px-2 py-1 bg-primary/10 rounded">LIVE DATA</span>
+</div>
+<div class="relative w-full h-8 flex items-center">
+<div class="absolute inset-0 top-1/2 -translate-y-1/2 h-1 bg-surface-container-lowest rounded-full w-full"></div>
+<div class="absolute inset-0 top-1/2 -translate-y-1/2 h-1 bg-primary/30 rounded-full w-[85%]"></div>
+<div class="absolute left-[85%] top-1/2 -translate-y-1/2 w-4 h-4 bg-primary rounded-full shadow-[0_0_15px_rgba(107,255,143,0.6)] cursor-pointer"></div>
+<!-- Time Markers -->
+<div class="absolute bottom-[-16px] left-0 text-[8px] font-bold text-on-surface-variant">00:00</div>
+<div class="absolute bottom-[-16px] left-1/4 text-[8px] font-bold text-on-surface-variant">06:00</div>
+<div class="absolute bottom-[-16px] left-1/2 text-[8px] font-bold text-on-surface-variant">12:00</div>
+<div class="absolute bottom-[-16px] left-3/4 text-[8px] font-bold text-on-surface-variant">18:00</div>
+<div class="absolute bottom-[-16px] right-0 text-[8px] font-bold text-on-surface-variant">NOW</div>
+</div>
+</div>
+<!-- Action Floating Buttons -->
+<div class="flex flex-col gap-3">
+<button class="w-14 h-14 rounded-lg bg-surface-container-highest text-primary flex items-center justify-center shadow-xl hover:scale-110 transition-transform active:scale-95">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+</button>
+<button class="w-14 h-14 rounded-lg bg-surface-container-highest text-primary flex items-center justify-center shadow-xl hover:scale-110 transition-transform active:scale-95">
+<span class="material-symbols-outlined" data-icon="remove">remove</span>
+</button>
+<button class="w-14 h-14 rounded-lg bg-primary text-on-primary-container flex items-center justify-center shadow-[0_0_20px_rgba(107,255,143,0.3)] hover:scale-110 transition-transform active:scale-95">
+<span class="material-symbols-outlined" data-icon="my_location" style="font-variation-settings: 'FILL' 1;">my_location</span>
+</button>
+</div>
+</div>
+</main>
+<!-- Footer Shell -->
+<footer class="w-full bg-emerald-950 rounded-t-[48px] relative z-40">
+<div class="w-full py-16 px-12 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl mx-auto">
+<div class="space-y-6">
+<div class="text-lg font-bold text-emerald-400">EcoModern | Bioluminescent Forest</div>
+<p class="text-sm font-inter text-emerald-100/60 leading-relaxed max-w-sm">
+                    Utilizing global satellite data and IoT forest sensors to map our planet's health in real-time. Our ecosystem approach ensures transparent environmental monitoring.
+                </p>
+<div class="flex gap-6">
+<a class="text-emerald-100/50 hover:text-emerald-300 underline underline-offset-4 text-sm transition-colors duration-200" href="#">Projects</a>
+<a class="text-emerald-100/50 hover:text-emerald-300 underline underline-offset-4 text-sm transition-colors duration-200" href="#">Sustainability Report</a>
+<a class="text-emerald-100/50 hover:text-emerald-300 underline underline-offset-4 text-sm transition-colors duration-200" href="#">Our Ecosystem</a>
+</div>
+</div>
+<div class="flex flex-col md:items-end justify-between">
+<div class="flex flex-wrap gap-4 md:justify-end">
+<a class="text-emerald-100/50 hover:text-emerald-300 underline underline-offset-4 text-sm transition-colors duration-200" href="#">Carbon Offset</a>
+<a class="text-emerald-100/50 hover:text-emerald-300 underline underline-offset-4 text-sm transition-colors duration-200" href="#">Privacy</a>
+<a class="text-emerald-100/50 hover:text-emerald-300 underline underline-offset-4 text-sm transition-colors duration-200" href="#">Terms</a>
+</div>
+<div class="mt-8 text-sm font-inter text-emerald-100/60">
+                    © 2024 Bioluminescent Forest. All rights reserved.
+                </div>
+</div>
+</div>
+<!-- Tonal layering accent -->
+<div class="absolute inset-0 bg-emerald-900/20 pointer-events-none rounded-t-[48px]"></div>
+</footer>
+</body></html>

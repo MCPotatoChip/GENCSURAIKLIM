@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sözlük | Biolume Climate</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "tertiary-fixed-dim": "#d6efd7",
+                        "surface-container-highest": "#1a291e",
+                        "surface-container-lowest": "#000000",
+                        "outline-variant": "#3f4b41",
+                        "on-primary-fixed-variant": "#006a2d",
+                        "on-background": "#edfaec",
+                        "on-primary-fixed": "#004a1d",
+                        "tertiary": "#eaffea",
+                        "surface": "#061009",
+                        "primary-container": "#0abc56",
+                        "inverse-on-surface": "#4c584e",
+                        "tertiary-fixed": "#e4fde5",
+                        "tertiary-dim": "#d6efd7",
+                        "surface-container-high": "#142318",
+                        "on-error": "#450900",
+                        "primary-dim": "#5bf083",
+                        "on-error-container": "#ffd2c8",
+                        "on-surface-variant": "#a1aea2",
+                        "secondary-fixed": "#8ff8b4",
+                        "background": "#061009",
+                        "on-surface": "#edfaec",
+                        "secondary-dim": "#81eaa7",
+                        "on-secondary": "#005f35",
+                        "surface-dim": "#061009",
+                        "secondary-container": "#006d3e",
+                        "primary-fixed-dim": "#5bf083",
+                        "tertiary-container": "#d9f1da",
+                        "surface-container": "#0f1c13",
+                        "outline": "#6c796d",
+                        "primary": "#6bff8f",
+                        "on-primary": "#005f28",
+                        "on-primary-container": "#002c0f",
+                        "surface-bright": "#1f3024",
+                        "on-tertiary-container": "#475c4a",
+                        "inverse-surface": "#f0fdef",
+                        "on-secondary-container": "#e2ffe7",
+                        "error-dim": "#d53d18",
+                        "error": "#ff7351",
+                        "surface-container-low": "#0a160e",
+                        "secondary-fixed-dim": "#81eaa7",
+                        "surface-tint": "#6bff8f",
+                        "secondary": "#8ff8b4",
+                        "on-secondary-fixed-variant": "#006a3c",
+                        "on-tertiary-fixed": "#3b503f",
+                        "surface-variant": "#1a291e",
+                        "error-container": "#b92902",
+                        "on-tertiary-fixed-variant": "#576d5b",
+                        "primary-fixed": "#6bff8f",
+                        "on-tertiary": "#4f6452",
+                        "inverse-primary": "#006e2f",
+                        "on-secondary-fixed": "#004a28"
+                    },
+                    fontFamily: {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #061009; }
+        .glass-card {
+            background: rgba(26, 41, 30, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(107, 255, 143, 0.1);
+        }
+        .biolume-glow {
+            box-shadow: 0 0 30px rgba(107, 255, 143, 0.15);
+        }
+        .biolume-chip-active {
+            box-shadow: 0 0 15px rgba(107, 255, 143, 0.4);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="text-on-background selection:bg-primary selection:text-on-primary">
+<!-- Top Navigation Shell -->
+<nav class="fixed top-0 w-full z-50 bg-emerald-950/60 backdrop-blur-xl shadow-[0_20px_40px_rgba(0,0,0,0.4)]">
+<div class="flex justify-between items-center px-8 h-20 max-w-screen-2xl mx-auto">
+<div class="text-2xl font-black text-emerald-400 tracking-tighter">
+                Biolume Climate
+            </div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-inter tracking-tight font-bold text-sm uppercase text-emerald-100/70 hover:text-emerald-100 transition-all duration-300" href="#">Keşfet</a>
+<a class="font-inter tracking-tight font-bold text-sm uppercase text-emerald-100/70 hover:text-emerald-100 transition-all duration-300" href="#">Projeler</a>
+<a class="font-inter tracking-tight font-bold text-sm uppercase text-emerald-100/70 hover:text-emerald-100 transition-all duration-300" href="#">Etki</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 rounded-full hover:bg-emerald-800/40 transition-all duration-300 scale-95 active:scale-90">
+<span class="material-symbols-outlined text-emerald-400">search</span>
+</button>
+<button class="p-2 rounded-full hover:bg-emerald-800/40 transition-all duration-300 scale-95 active:scale-90">
+<span class="material-symbols-outlined text-emerald-400">notifications</span>
+</button>
+<button class="p-2 rounded-full hover:bg-emerald-800/40 transition-all duration-300 scale-95 active:scale-90">
+<span class="material-symbols-outlined text-emerald-400">account_circle</span>
+</button>
+</div>
+</div>
+</nav>
+<main class="pt-32 pb-24 px-6 md:px-12 max-w-screen-2xl mx-auto">
+<!-- Hero Section -->
+<header class="mb-20">
+<h1 class="text-6xl md:text-8xl font-black tracking-tighter text-on-surface mb-6">
+                İklim <span class="text-primary italic">Sözlüğü</span>
+</h1>
+<p class="text-xl text-on-surface-variant max-w-2xl leading-relaxed">
+                Gezegenimizin geleceğini anlamak için ihtiyacınız olan temel kavramlar ve bilimsel terimler rehberi.
+            </p>
+</header>
+<!-- Search and Filter Shell -->
+<section class="mb-16 flex flex-col md:flex-row gap-6 items-end">
+<div class="w-full md:w-1/3">
+<label class="block text-xs font-bold uppercase tracking-widest text-primary mb-3 ml-1">Terim Ara</label>
+<div class="relative">
+<input class="w-full bg-surface-container-lowest border-none rounded-lg h-14 pl-14 pr-6 text-on-surface focus:ring-1 focus:ring-primary/40 transition-all" placeholder="Örn: Karbon Ayak İzi..." type="text"/>
+<span class="material-symbols-outlined absolute left-5 top-1/2 -translate-y-1/2 text-primary/60">manage_search</span>
+</div>
+</div>
+<div class="flex flex-wrap gap-3">
+<button class="px-6 py-3 rounded-full bg-primary text-on-primary font-bold text-sm uppercase tracking-wider biolume-chip-active transition-all">Tümü</button>
+<button class="px-6 py-3 rounded-full bg-surface-container-highest text-on-surface-variant font-bold text-sm uppercase tracking-wider hover:text-primary transition-all">Atmosfer</button>
+<button class="px-6 py-3 rounded-full bg-surface-container-highest text-on-surface-variant font-bold text-sm uppercase tracking-wider hover:text-primary transition-all">Enerji</button>
+<button class="px-6 py-3 rounded-full bg-surface-container-highest text-on-surface-variant font-bold text-sm uppercase tracking-wider hover:text-primary transition-all">Ekoloji</button>
+</div>
+</section>
+<!-- Bento Grid Glossary -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Card 1: Large Featured -->
+<div class="md:col-span-8 group">
+<div class="glass-card rounded-lg p-10 h-full flex flex-col justify-between biolume-glow transition-all duration-500 hover:scale-[1.01] hover:bg-surface-container-highest/80">
+<div>
+<div class="flex justify-between items-start mb-8">
+<span class="text-xs font-bold py-1 px-3 bg-primary/10 text-primary rounded-full uppercase tracking-tighter">Öne Çıkan Kavram</span>
+<span class="material-symbols-outlined text-primary-dim opacity-40 group-hover:opacity-100 transition-opacity">auto_awesome</span>
+</div>
+<h2 class="text-4xl font-extrabold text-on-surface mb-6 tracking-tight">Sera Gazı</h2>
+<p class="text-lg text-on-surface-variant leading-relaxed max-w-2xl">
+                            Atmosferde bulunan ve kızılötesi radyasyonu emerek hapseden gazlardır. Bu süreç, yeryüzünün ısınmasına neden olan ana etkendir. En yaygın olanları karbondioksit (CO2), metan (CH4) ve azot oksittir (N2O).
+                        </p>
+</div>
+<div class="mt-12 flex items-center gap-4">
+<div class="h-1 flex-1 bg-surface-container-lowest rounded-full overflow-hidden">
+<div class="h-full bg-primary w-2/3 shadow-[0_0_10px_rgba(107,255,143,0.5)]"></div>
+</div>
+<span class="text-xs font-bold text-primary uppercase">Etki Seviyesi: Yüksek</span>
+</div>
+</div>
+</div>
+<!-- Card 2: Medium -->
+<div class="md:col-span-4 group">
+<div class="glass-card rounded-lg p-8 h-full biolume-glow transition-all duration-500 hover:scale-[1.01] border-l-4 border-l-primary/30">
+<span class="material-symbols-outlined text-secondary mb-6" style="font-variation-settings: 'FILL' 1;">eco</span>
+<h2 class="text-2xl font-bold text-on-surface mb-4">Biyoçeşitlilik</h2>
+<p class="text-on-surface-variant text-sm leading-relaxed">
+                        Bir ekosistem, habitat veya tüm gezegendeki yaşam formlarının çeşitliliğidir. Genetik, tür ve ekosistem çeşitliliğini kapsar. Doğa sistemlerinin dayanıklılığı için kritiktir.
+                    </p>
+</div>
+</div>
+<!-- Card 3: Standard -->
+<div class="md:col-span-4 group">
+<div class="glass-card rounded-lg p-8 h-full biolume-glow transition-all duration-500 hover:scale-[1.01] bg-surface-container/40">
+<h2 class="text-2xl font-bold text-on-surface mb-4 flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">footprint</span>
+                        Karbon Ayak İzi
+                    </h2>
+<p class="text-on-surface-variant text-sm leading-relaxed">
+                        Bir bireyin, kurumun veya ürünün faaliyetleri sonucu atmosfere salınan toplam sera gazı miktarının karbondioksit cinsinden ölçüsüdür.
+                    </p>
+</div>
+</div>
+<!-- Card 4: Standard Gradient -->
+<div class="md:col-span-4 group">
+<div class="relative overflow-hidden rounded-lg p-8 h-full flex flex-col justify-center transition-all duration-500 hover:scale-[1.01] bg-gradient-to-br from-emerald-900/40 to-surface-container">
+<div class="absolute -right-4 -bottom-4 opacity-10">
+<span class="material-symbols-outlined text-[120px]">cyclone</span>
+</div>
+<h2 class="text-2xl font-bold text-primary mb-3">Net Sıfır</h2>
+<p class="text-on-surface-variant text-sm leading-relaxed relative z-10">
+                        Atmosfere salınan sera gazı miktarı ile atmosferden geri çekilen miktarın birbirine eşitlenerek dengelenmesi durumudur.
+                    </p>
+</div>
+</div>
+<!-- Card 5: Medium Info -->
+<div class="md:col-span-4 group">
+<div class="glass-card rounded-lg p-8 h-full biolume-glow transition-all duration-500 hover:scale-[1.01]">
+<div class="flex items-center gap-2 mb-4">
+<div class="w-2 h-2 rounded-full bg-error animate-pulse"></div>
+<span class="text-[10px] font-black uppercase tracking-widest text-error">Acil Durum</span>
+</div>
+<h2 class="text-2xl font-bold text-on-surface mb-3">Devrilme Noktası</h2>
+<p class="text-on-surface-variant text-sm leading-relaxed">
+                        İklim sistemindeki küçük bir değişikliğin, sistemin geri döndürülemez ve kendi kendini besleyen büyük bir değişime girmesine neden olduğu eşik değerdir.
+                    </p>
+</div>
+</div>
+<!-- Card 6: Visual Image Card -->
+<div class="md:col-span-12 group h-[300px] relative overflow-hidden rounded-lg">
+<div class="absolute inset-0 bg-gradient-to-t from-emerald-950 via-emerald-950/60 to-transparent z-10"></div>
+<img alt="Mist over a deep green forest mountain range" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Lush green mountain forest with mist" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2LCT7r-5VrScksJsjnPH9QqDgSdnb8QnfsGPw-QSAn_uYBUmFoa15k0xCiH0-fz5x_y2DziOrHYSP-_EVKXIX-IzJm450s4NOniPYIisLyMVzoM07tBWhdIJMETpeTquC2WFPAmeY7byQVdG9e1SwSZUIyc8lac2shHYwjkvD3x8XeRkVN00mqHp_fOd4Wy4SGA9UufC6XMGTpN1uHxRIqJTJfEjLhFP0GvpG8fGnWiHbaWjjpsb87K9NhJ0s0LQ3RTsj60hyNvg"/>
+<div class="absolute bottom-10 left-10 z-20 max-w-2xl">
+<h2 class="text-4xl font-black text-on-surface mb-4 tracking-tighter">Yenilenebilir Enerji</h2>
+<p class="text-emerald-100/80 leading-relaxed font-medium">
+                        Güneş, rüzgar, jeotermal ve biyokütle gibi doğal süreçlerden elde edilen, kullanıldıkça tükenmeyen enerji kaynaklarıdır. Fosil yakıtların yerini alarak emisyonları düşürmenin anahtarıdır.
+                    </p>
+</div>
+</div>
+</div>
+</main>
+<!-- Detailed Footer Shell -->
+<footer class="w-full rounded-t-[48px] bg-emerald-950 dark:bg-[#061009] mt-20">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 py-16 gap-8 max-w-screen-2xl mx-auto">
+<div class="flex flex-col items-center md:items-start">
+<div class="text-xl font-bold text-emerald-400 mb-4">Biolume Climate</div>
+<p class="font-inter text-emerald-100/60 text-sm max-w-xs text-center md:text-left">
+                    Geleceğin ekosistemini bugünden inşa ediyoruz. Teknoloji ve doğanın uyumu.
+                </p>
+</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="font-inter text-emerald-100/60 text-sm hover:text-emerald-300 transition-colors opacity-80 hover:opacity-100" href="#">Gizlilik Politikası</a>
+<a class="font-inter text-emerald-100/60 text-sm hover:text-emerald-300 transition-colors opacity-80 hover:opacity-100" href="#">Kullanım Şartları</a>
+<a class="font-inter text-emerald-100/60 text-sm hover:text-emerald-300 transition-colors opacity-80 hover:opacity-100" href="#">Bize Ulaşın</a>
+<a class="font-inter text-emerald-100/60 text-sm hover:text-emerald-300 transition-colors opacity-80 hover:opacity-100" href="#">Sürdürülebilirlik Raporu</a>
+</div>
+<div class="flex flex-col items-center md:items-end">
+<div class="flex gap-4 mb-4">
+<span class="material-symbols-outlined text-emerald-400/50 hover:text-emerald-400 cursor-pointer transition-colors">language</span>
+<span class="material-symbols-outlined text-emerald-400/50 hover:text-emerald-400 cursor-pointer transition-colors">public</span>
+<span class="material-symbols-outlined text-emerald-400/50 hover:text-emerald-400 cursor-pointer transition-colors">monitoring</span>
+</div>
+<p class="font-inter text-emerald-100/60 text-sm">© 2024 Biolume Climate. Protected Ecosystem.</p>
+</div>
+</div>
+</footer>
+<!-- FAB Suppression: On Glossary detail/listing, focus is content navigation, but search is in top bar -->
+</body></html>

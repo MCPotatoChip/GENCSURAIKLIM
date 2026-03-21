@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>EcoModern | Environmental Countdown</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-secondary-fixed": "#004a28",
+              "secondary-dim": "#81eaa7",
+              "error-container": "#b92902",
+              "on-secondary": "#005f35",
+              "on-secondary-container": "#e2ffe7",
+              "surface-container-lowest": "#000000",
+              "primary": "#6bff8f",
+              "background": "#061009",
+              "on-primary-fixed-variant": "#006a2d",
+              "on-surface-variant": "#a1aea2",
+              "on-error-container": "#ffd2c8",
+              "surface-container": "#0f1c13",
+              "inverse-primary": "#006e2f",
+              "on-tertiary": "#4f6452",
+              "on-error": "#450900",
+              "on-secondary-fixed-variant": "#006a3c",
+              "surface-dim": "#061009",
+              "tertiary-dim": "#d6efd7",
+              "surface": "#061009",
+              "on-primary-fixed": "#004a1d",
+              "on-surface": "#edfaec",
+              "error": "#ff7351",
+              "on-tertiary-fixed": "#3b503f",
+              "on-primary": "#005f28",
+              "surface-container-highest": "#1a291e",
+              "on-tertiary-fixed-variant": "#576d5b",
+              "primary-fixed-dim": "#5bf083",
+              "error-dim": "#d53d18",
+              "tertiary-fixed": "#e4fde5",
+              "tertiary-container": "#d9f1da",
+              "tertiary": "#eaffea",
+              "tertiary-fixed-dim": "#d6efd7",
+              "secondary-fixed-dim": "#81eaa7",
+              "outline": "#6c796d",
+              "primary-fixed": "#6bff8f",
+              "secondary-container": "#006d3e",
+              "surface-container-low": "#0a160e",
+              "surface-variant": "#1a291e",
+              "surface-tint": "#6bff8f",
+              "secondary-fixed": "#8ff8b4",
+              "inverse-surface": "#f0fdef",
+              "surface-bright": "#1f3024",
+              "primary-dim": "#5bf083",
+              "on-primary-container": "#002c0f",
+              "outline-variant": "#3f4b41",
+              "secondary": "#8ff8b4",
+              "inverse-on-surface": "#4c584e",
+              "primary-container": "#0abc56",
+              "on-background": "#edfaec",
+              "surface-container-high": "#142318",
+              "on-tertiary-container": "#475c4a"
+            },
+            fontFamily: {
+              "headline": ["Inter"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(26, 41, 30, 0.6);
+            backdrop-filter: blur(20px);
+        }
+        .biolume-glow {
+            box-shadow: 0 0 25px rgba(107, 255, 143, 0.2);
+        }
+        .biolume-glow-active {
+            box-shadow: 0 0 30px rgba(107, 255, 143, 0.4);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-emerald-950/60 backdrop-blur-xl shadow-[0_20px_40px_rgba(0,0,0,0.4)]">
+<div class="flex justify-between items-center px-8 h-20 w-full max-auto">
+<div class="text-2xl font-black text-emerald-400 flex items-center gap-2 font-inter tracking-tight">
+<span class="material-symbols-outlined" data-icon="eco">eco</span>
+                EcoModern
+            </div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-emerald-100/70 hover:text-emerald-300 transition-all duration-300 text-sm font-medium" href="#">Dashboard</a>
+<a class="text-emerald-400 font-bold border-b-2 border-emerald-400 transition-all duration-300 text-sm" href="#">Events</a>
+<a class="text-emerald-100/70 hover:text-emerald-300 transition-all duration-300 text-sm font-medium" href="#">Community</a>
+<a class="text-emerald-100/70 hover:text-emerald-300 transition-all duration-300 text-sm font-medium" href="#">Impact</a>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative group">
+<input class="bg-surface-container-lowest border-none rounded-full px-6 py-2 text-sm focus:ring-1 focus:ring-primary/40 w-48 transition-all group-focus-within:w-64 placeholder:text-on-surface-variant/50" placeholder="Search events..." type="text"/>
+</div>
+<button class="text-emerald-400 hover:text-emerald-300 transition-colors p-2">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+</button>
+</div>
+</div>
+</nav>
+<main class="pt-32 pb-24 px-8 max-w-7xl mx-auto min-h-screen">
+<!-- Hero Countdown Section -->
+<section class="relative mb-16">
+<div class="glass-card rounded-lg p-12 md:p-16 overflow-hidden relative group">
+<!-- Background Image Decor -->
+<div class="absolute inset-0 -z-10 opacity-20 group-hover:opacity-30 transition-opacity duration-700">
+<img alt="" class="w-full h-full object-cover" data-alt="Dense dark green rainforest canopy seen from above" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWroV0Vaf3MvOs0OH0hbxxc86dQUfq8JKe3N0N29EUO5Gtn5DfiiM5Tb6x4sintm9FoLideCVREcch9IDsafKkt_kixBXGNVEhsD9l-4PQmmKovaRbTmtUtMB1wuahNYhNXEMwC69DO13cNrdW9937_MqP9pOvIPHfEm9ni1p4d3XlXKDgWjLI02Y8ZVEh08iswYfeeD7SpT4ggxFuVKOQpk9kXaHB5DvfvdJv1w4EKxwVw5FEGrvMMQVLoTw_CL2aIwwuyvFhtb8"/>
+</div>
+<div class="flex flex-col md:flex-row items-center justify-between gap-12">
+<div class="max-w-xl">
+<span class="inline-flex items-center px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-bold uppercase tracking-widest mb-6">
+                            Next Global Milestone
+                        </span>
+<h1 class="text-5xl md:text-7xl font-black text-on-surface tracking-tighter mb-4">
+                            World <span class="text-primary">Environment</span> Day
+                        </h1>
+<p class="text-lg text-on-surface-variant mb-10 max-w-md">
+                            Join millions of individuals globally in the largest collective action for our planet. Restore ecosystems, protect biodiversity.
+                        </p>
+<div class="flex gap-4">
+<button class="bg-gradient-to-b from-primary to-primary-container text-on-primary-container px-8 py-4 rounded-lg font-bold text-sm uppercase tracking-widest biolume-glow hover:scale-105 active:scale-95 transition-all duration-300">
+                                Join Events
+                            </button>
+<button class="px-8 py-4 rounded-lg font-bold text-sm uppercase tracking-widest text-primary hover:bg-primary/5 transition-all">
+                                View Brief
+                            </button>
+</div>
+</div>
+<!-- Large Countdown Visual -->
+<div class="flex gap-4 md:gap-6 items-end">
+<div class="text-center">
+<div class="text-6xl md:text-8xl font-black text-primary leading-none">12</div>
+<div class="text-[10px] uppercase tracking-[0.2em] font-bold text-on-surface-variant mt-2">Days</div>
+</div>
+<div class="text-5xl md:text-7xl font-light text-primary/30 leading-none pb-2">:</div>
+<div class="text-center">
+<div class="text-6xl md:text-8xl font-black text-primary leading-none">08</div>
+<div class="text-[10px] uppercase tracking-[0.2em] font-bold text-on-surface-variant mt-2">Hours</div>
+</div>
+<div class="text-5xl md:text-7xl font-light text-primary/30 leading-none pb-2">:</div>
+<div class="text-center">
+<div class="text-6xl md:text-8xl font-black text-primary leading-none">42</div>
+<div class="text-[10px] uppercase tracking-[0.2em] font-bold text-on-surface-variant mt-2">Mins</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Bento Grid: Calendar & Events -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Calendar Section -->
+<section class="lg:col-span-2 glass-card rounded-lg p-8">
+<div class="flex justify-between items-center mb-10">
+<h2 class="text-3xl font-bold tracking-tight text-on-surface">June Ecosystem</h2>
+<div class="flex items-center gap-2">
+<button class="p-2 hover:bg-surface-container rounded-full transition-colors"><span class="material-symbols-outlined">chevron_left</span></button>
+<span class="font-bold text-primary">JUNE 2024</span>
+<button class="p-2 hover:bg-surface-container rounded-full transition-colors"><span class="material-symbols-outlined">chevron_right</span></button>
+</div>
+</div>
+<div class="grid grid-cols-7 gap-2">
+<!-- Day Labels -->
+<div class="text-center text-[10px] font-black text-on-surface-variant mb-4 tracking-tighter uppercase">Sun</div>
+<div class="text-center text-[10px] font-black text-on-surface-variant mb-4 tracking-tighter uppercase">Mon</div>
+<div class="text-center text-[10px] font-black text-on-surface-variant mb-4 tracking-tighter uppercase">Tue</div>
+<div class="text-center text-[10px] font-black text-on-surface-variant mb-4 tracking-tighter uppercase">Wed</div>
+<div class="text-center text-[10px] font-black text-on-surface-variant mb-4 tracking-tighter uppercase">Thu</div>
+<div class="text-center text-[10px] font-black text-on-surface-variant mb-4 tracking-tighter uppercase">Fri</div>
+<div class="text-center text-[10px] font-black text-on-surface-variant mb-4 tracking-tighter uppercase">Sat</div>
+<!-- Calendar Days (Sample) -->
+<div class="h-24 p-2 bg-surface-container-low rounded-xl opacity-30 text-xs font-bold">29</div>
+<div class="h-24 p-2 bg-surface-container-low rounded-xl opacity-30 text-xs font-bold">30</div>
+<div class="h-24 p-2 bg-surface-container-lowest rounded-xl text-xs font-bold text-on-surface-variant">1</div>
+<div class="h-24 p-2 bg-surface-container-lowest rounded-xl text-xs font-bold text-on-surface-variant">2</div>
+<div class="h-24 p-2 bg-surface-container-lowest rounded-xl text-xs font-bold text-on-surface-variant">3</div>
+<div class="h-24 p-2 bg-surface-container-lowest rounded-xl text-xs font-bold text-on-surface-variant">4</div>
+<!-- Active Event Day -->
+<div class="h-24 p-3 bg-surface-container-highest border border-primary/40 rounded-xl relative group cursor-pointer biolume-glow-active">
+<span class="text-xs font-black text-primary">5</span>
+<div class="absolute bottom-3 left-3 right-3">
+<div class="text-[10px] font-bold leading-tight text-on-surface">World Env Day</div>
+<div class="w-full h-1 bg-primary rounded-full mt-1 shadow-[0_0_8px_rgba(107,255,143,0.6)]"></div>
+</div>
+</div>
+<div class="h-24 p-2 bg-surface-container-lowest rounded-xl text-xs font-bold text-on-surface-variant">6</div>
+<div class="h-24 p-2 bg-surface-container-lowest rounded-xl text-xs font-bold text-on-surface-variant">7</div>
+<!-- Ocean Day -->
+<div class="h-24 p-3 bg-surface-container-highest border border-secondary/20 rounded-xl relative group cursor-pointer hover:border-secondary transition-colors">
+<span class="text-xs font-black text-secondary">8</span>
+<div class="absolute bottom-3 left-3 right-3">
+<div class="text-[10px] font-bold leading-tight text-on-surface">Oceans Day</div>
+<div class="w-full h-1 bg-secondary rounded-full mt-1"></div>
+</div>
+</div>
+<div class="h-24 p-2 bg-surface-container-lowest rounded-xl text-xs font-bold text-on-surface-variant">9</div>
+<div class="h-24 p-2 bg-surface-container-lowest rounded-xl text-xs font-bold text-on-surface-variant">10</div>
+<div class="h-24 p-2 bg-surface-container-lowest rounded-xl text-xs font-bold text-on-surface-variant">11</div>
+<div class="h-24 p-2 bg-surface-container-lowest rounded-xl text-xs font-bold text-on-surface-variant">12</div>
+<div class="h-24 p-2 bg-surface-container-lowest rounded-xl text-xs font-bold text-on-surface-variant">13</div>
+<div class="h-24 p-2 bg-surface-container-lowest rounded-xl text-xs font-bold text-on-surface-variant">14</div>
+<div class="h-24 p-2 bg-surface-container-lowest rounded-xl text-xs font-bold text-on-surface-variant">15</div>
+<div class="h-24 p-2 bg-surface-container-lowest rounded-xl text-xs font-bold text-on-surface-variant">16</div>
+<!-- Desertification Day -->
+<div class="h-24 p-3 bg-surface-container-highest border border-primary/20 rounded-xl relative group cursor-pointer hover:border-primary transition-colors">
+<span class="text-xs font-black text-primary">17</span>
+<div class="absolute bottom-3 left-3 right-3">
+<div class="text-[10px] font-bold leading-tight text-on-surface">Desert Day</div>
+<div class="w-full h-1 bg-primary/40 rounded-full mt-1"></div>
+</div>
+</div>
+<div class="h-24 p-2 bg-surface-container-lowest rounded-xl text-xs font-bold text-on-surface-variant">18</div>
+<div class="h-24 p-2 bg-surface-container-lowest rounded-xl text-xs font-bold text-on-surface-variant">19</div>
+<div class="h-24 p-2 bg-surface-container-lowest rounded-xl text-xs font-bold text-on-surface-variant">20</div>
+</div>
+</section>
+<!-- Upcoming List Section -->
+<section class="space-y-6">
+<div class="flex items-center justify-between">
+<h3 class="text-xl font-bold tracking-tight text-on-surface">Regional Events</h3>
+<a class="text-xs font-bold text-primary uppercase tracking-widest hover:underline underline-offset-4" href="#">See All</a>
+</div>
+<div class="space-y-4">
+<!-- Event Item -->
+<div class="bg-surface-container-high p-5 rounded-lg border-l-4 border-primary hover:bg-surface-container-highest transition-colors cursor-pointer">
+<div class="flex justify-between items-start mb-2">
+<span class="text-[10px] font-black text-primary uppercase tracking-widest">In 2 Days</span>
+<span class="material-symbols-outlined text-sm text-on-surface-variant">open_in_new</span>
+</div>
+<h4 class="font-bold text-on-surface mb-1">Global Plastic Clean-up</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">Local coordination for shoreline cleaning at 8:00 AM.</p>
+<div class="flex items-center gap-2 mt-4">
+<div class="flex -space-x-2">
+<img alt="" class="w-6 h-6 rounded-full border border-background" data-alt="Small round portrait of a person" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6UnZd63wuPtNOkdnLIvWSHzfZWNFz83esJ3aAj2NxNZFvVBAawLwu7_3U8wtSZk-l9_8inu4nbss5H6vXcXoFlXn0pzWw-UOu55Qq2tCAHE8ZwDmr1e_lY7Me24EyR01upwcVixcNxnf5s9y8HnR68VW9wI9-vWoJL9vCUqqU_F3VP77gugNvQih9n2b2HYyYteYQfVFQbtB6bAsORA_-7dCOIhlkxijcJeWk_fkt4TD_H_64h9ptT8bL_Zo8q5vSYPoFdddY0uw"/>
+<img alt="" class="w-6 h-6 rounded-full border border-background" data-alt="Small round portrait of a person" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-rK2av0rOKGKo5Uf562uDxK6d3lxxtjqaZlCqkWJkxA4gCrYF9C4ur4k7pvqsxdtznwRrsf09Pz6RTP8M9QibVSrw-XNUq9TAjO4j8Mhi24lSJvL8JTvi4aJu7PY1FKFWqC5HgMSZ_9gjmqAKr5q6HhKgjBhBIsZq3NhRd_gREZSh37l4lUrVjt4LXTB28M__Q5DuyT4OPWUxl-fOV07nM_bfcVPN1zy3EUZgnwNIA_t80_BSljwpkERTqrIY3k_D1rz-aRmJRsY"/>
+<div class="w-6 h-6 rounded-full bg-surface-container-lowest border border-background flex items-center justify-center text-[8px] font-bold text-primary">+12</div>
+</div>
+<span class="text-[10px] text-on-surface-variant">Attending</span>
+</div>
+</div>
+<!-- Event Item -->
+<div class="bg-surface-container-high p-5 rounded-lg border-l-4 border-emerald-900 hover:bg-surface-container-highest transition-colors cursor-pointer">
+<div class="flex justify-between items-start mb-2">
+<span class="text-[10px] font-black text-on-surface-variant uppercase tracking-widest">In 5 Days</span>
+</div>
+<h4 class="font-bold text-on-surface mb-1">Eco-Innovation Summit</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">Webinar featuring climate tech leaders and activists.</p>
+<div class="mt-4 flex items-center gap-4">
+<span class="flex items-center gap-1 text-[10px] text-primary font-bold">
+<span class="material-symbols-outlined text-xs">videocam</span> Live
+                            </span>
+</div>
+</div>
+<!-- Event Item -->
+<div class="bg-surface-container-high p-5 rounded-lg border-l-4 border-emerald-900 hover:bg-surface-container-highest transition-colors cursor-pointer">
+<div class="flex justify-between items-start mb-2">
+<span class="text-[10px] font-black text-on-surface-variant uppercase tracking-widest">In 9 Days</span>
+</div>
+<h4 class="font-bold text-on-surface mb-1">Renewable Energy Workshop</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">Introduction to community solar projects.</p>
+</div>
+</div>
+<div class="p-6 bg-gradient-to-br from-primary/10 to-transparent rounded-lg border border-primary/20">
+<p class="text-sm font-medium text-primary-fixed mb-3 italic">"The greatest threat to our planet is the belief that someone else will save it."</p>
+<span class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">— Robert Swan</span>
+</div>
+</section>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full rounded-t-[48px] bg-emerald-950 mt-12">
+<div class="w-full py-16 px-12 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl mx-auto">
+<div class="space-y-6">
+<div class="text-lg font-bold text-emerald-400">EcoModern</div>
+<p class="text-emerald-100/60 text-sm max-w-sm leading-relaxed">
+                    A digital ecosystem dedicated to tracking, promoting, and participating in global environmental restoration efforts through community action.
+                </p>
+<div class="flex gap-4">
+<a class="p-2 bg-emerald-900/40 rounded-full text-emerald-400 hover:bg-emerald-900 transition-colors" href="#"><span class="material-symbols-outlined">public</span></a>
+<a class="p-2 bg-emerald-900/40 rounded-full text-emerald-400 hover:bg-emerald-900 transition-colors" href="#"><span class="material-symbols-outlined">mail</span></a>
+<a class="p-2 bg-emerald-900/40 rounded-full text-emerald-400 hover:bg-emerald-900 transition-colors" href="#"><span class="material-symbols-outlined">campaign</span></a>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-8">
+<div class="space-y-4">
+<h5 class="text-emerald-400 font-bold text-xs uppercase tracking-widest">Navigation</h5>
+<ul class="space-y-2">
+<li><a class="text-sm text-emerald-100/50 hover:text-emerald-300 underline-offset-4 transition-colors" href="#">Projects</a></li>
+<li><a class="text-sm text-emerald-100/50 hover:text-emerald-300 underline-offset-4 transition-colors" href="#">Sustainability Report</a></li>
+<li><a class="text-sm text-emerald-100/50 hover:text-emerald-300 underline-offset-4 transition-colors" href="#">Our Ecosystem</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h5 class="text-emerald-400 font-bold text-xs uppercase tracking-widest">Legal</h5>
+<ul class="space-y-2">
+<li><a class="text-sm text-emerald-100/50 hover:text-emerald-300 underline-offset-4 transition-colors" href="#">Carbon Offset</a></li>
+<li><a class="text-sm text-emerald-100/50 hover:text-emerald-300 underline-offset-4 transition-colors" href="#">Privacy</a></li>
+<li><a class="text-sm text-emerald-100/50 hover:text-emerald-300 underline-offset-4 transition-colors" href="#">Terms</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="w-full border-t border-emerald-900/50 py-8 px-12 text-center">
+<span class="text-sm font-inter text-emerald-100/60">© 2024 Bioluminescent Forest. All rights reserved.</span>
+</div>
+</footer>
+</body></html>

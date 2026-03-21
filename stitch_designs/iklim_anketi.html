@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>EcoModern | İklim Anketi</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-surface": "#edfaec",
+              "secondary-container": "#006d3e",
+              "primary-dim": "#5bf083",
+              "on-tertiary": "#4f6452",
+              "error-container": "#b92902",
+              "primary-container": "#0abc56",
+              "on-tertiary-fixed": "#3b503f",
+              "on-primary": "#005f28",
+              "inverse-surface": "#f0fdef",
+              "inverse-primary": "#006e2f",
+              "tertiary": "#eaffea",
+              "surface": "#061009",
+              "secondary-fixed-dim": "#81eaa7",
+              "on-primary-fixed-variant": "#006a2d",
+              "tertiary-dim": "#d6efd7",
+              "on-surface-variant": "#a1aea2",
+              "primary-fixed-dim": "#5bf083",
+              "on-background": "#edfaec",
+              "outline-variant": "#3f4b41",
+              "on-secondary": "#005f35",
+              "secondary-fixed": "#8ff8b4",
+              "on-secondary-fixed-variant": "#006a3c",
+              "surface-container-low": "#0a160e",
+              "surface-container-lowest": "#000000",
+              "secondary-dim": "#81eaa7",
+              "on-tertiary-container": "#475c4a",
+              "on-error": "#450900",
+              "error-dim": "#d53d18",
+              "primary-fixed": "#6bff8f",
+              "tertiary-fixed": "#e4fde5",
+              "primary": "#6bff8f",
+              "inverse-on-surface": "#4c584e",
+              "tertiary-container": "#d9f1da",
+              "surface-tint": "#6bff8f",
+              "on-primary-container": "#002c0f",
+              "secondary": "#8ff8b4",
+              "on-primary-fixed": "#004a1d",
+              "surface-variant": "#1a291e",
+              "surface-container-high": "#142318",
+              "surface-bright": "#1f3024",
+              "on-secondary-container": "#e2ffe7",
+              "outline": "#6c796d",
+              "background": "#061009",
+              "on-tertiary-fixed-variant": "#576d5b",
+              "surface-dim": "#061009",
+              "tertiary-fixed-dim": "#d6efd7",
+              "surface-container": "#0f1c13",
+              "on-secondary-fixed": "#004a28",
+              "surface-container-highest": "#1a291e",
+              "on-error-container": "#ffd2c8",
+              "error": "#ff7351"
+            },
+            fontFamily: {
+              "headline": ["Inter"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      body {
+        background-color: #061009;
+        color: #edfaec;
+        font-family: 'Inter', sans-serif;
+      }
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-card {
+        background: rgba(26, 41, 30, 0.6);
+        backdrop-filter: blur(20px);
+      }
+      .biolume-glow {
+        box-shadow: 0 0 20px rgba(107, 255, 143, 0.2);
+      }
+      .biolume-active {
+        box-shadow: 0 0 30px rgba(107, 255, 143, 0.4);
+      }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-emerald-950/60 backdrop-blur-xl shadow-[0_8px_32px_0_rgba(0,0,0,0.3)]">
+<div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
+<div class="text-2xl font-black text-emerald-400 flex items-center gap-2 font-['Inter'] tracking-tight">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">eco</span>
+                EcoModern
+            </div>
+<div class="hidden md:flex items-center gap-8 font-['Inter'] font-bold tracking-tight">
+<a class="text-emerald-100/70 hover:text-emerald-300 transition-colors duration-300" href="#">Keşfet</a>
+<a class="text-emerald-100/70 hover:text-emerald-300 transition-colors duration-300" href="#">Projeler</a>
+<a class="text-emerald-400 border-b-2 border-emerald-400 pb-1" href="#">Etki</a>
+<a class="text-emerald-100/70 hover:text-emerald-300 transition-colors duration-300" href="#">Topluluk</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-emerald-100/70 hover:text-emerald-300 transition-colors duration-300">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="text-emerald-100/70 hover:text-emerald-300 transition-colors duration-300">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-24 pb-12 px-6 flex flex-col items-center justify-center">
+<!-- Focused Survey Container -->
+<div class="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+<!-- Left Column: Context & Hero Element (Asymmetric Layout) -->
+<div class="lg:col-span-5 flex flex-col gap-8 order-2 lg:order-1">
+<div class="relative rounded-xl overflow-hidden aspect-[4/5] glass-card border border-outline-variant/20 biolume-glow">
+<img alt="Lush green forest canopy" class="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-overlay" data-alt="Lush green forest canopy with bioluminescent highlights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAD0OctYXhcov69bMlK2_wL8YvadzwLBMGEs76M0ZI5AZlLGt2wAOESW8CSoquE0ioxynS12TWy06VxPqADHVXt2kA8IC94g6ZKv7nIuqIk7rA6HSa9SveeejwTy1JLbS2g59EywUXKlpx6c7bqCuUBhDBLU2m1XpTT6RWxN_Qa9ljdbnw1zWWM1VIv5QVdvC20FPM0Vu5FEgPdR-WKmVOxGLUtVIKsZbBqt4dutwVOiJbUPRMv_zU9mQwPY9VXttoHd2ww_5_IsQE"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+<div class="absolute bottom-0 p-8">
+<span class="inline-block px-3 py-1 bg-primary-container text-on-primary-container text-[10px] font-black uppercase tracking-[0.1em] rounded-full mb-4">Odak Alanı</span>
+<h2 class="text-4xl font-extrabold text-on-surface leading-tight tracking-tight mb-4">Kentsel Ağaçlandırma ve Mikro İklimler</h2>
+<p class="text-on-surface-variant body-md leading-relaxed">Geri bildirimleriniz, 2024 yılında yüksek ısılı kentsel bölgelerdeki ağaçlandırma girişimlerini doğrudan şekillendiriyor. Bölgeleri topluluk etki verilerine göre önceliklendiriyoruz.</p>
+</div>
+</div>
+<div class="p-6 bg-surface-container rounded-lg border border-outline-variant/10">
+<div class="flex items-center gap-4 mb-3">
+<span class="material-symbols-outlined text-primary">verified_user</span>
+<span class="text-on-surface font-bold">Bilimsel Entegrasyon</span>
+</div>
+<p class="text-sm text-on-surface-variant">Bu yanıtlar, proje fizibilitesini sağlamak için yerel çevresel sensör verileriyle çapraz kontrol edilir.</p>
+</div>
+</div>
+<!-- Right Column: Survey Interface -->
+<div class="lg:col-span-7 flex flex-col gap-10 order-1 lg:order-2">
+<!-- Progress Header -->
+<div class="flex flex-col gap-4">
+<div class="flex justify-between items-end">
+<div>
+<span class="text-primary-fixed label-md font-bold tracking-widest uppercase">İklim Anketi 2024</span>
+<h1 class="text-5xl font-black text-on-surface mt-2 tracking-tighter">Etki Değerlendirmesi</h1>
+</div>
+<div class="text-right">
+<span class="text-2xl font-bold text-primary">04</span><span class="text-on-surface-variant font-medium">/12</span>
+</div>
+</div>
+<!-- Progress Bar -->
+<div class="h-1.5 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full w-1/3 bg-gradient-to-r from-primary to-primary-container rounded-full biolume-glow" style="width: 33%;"></div>
+</div>
+</div>
+<!-- Survey Question -->
+<div class="flex flex-col gap-8">
+<h3 class="text-2xl font-bold text-on-surface leading-snug">Son 12 ayda mahallenizde en çok hangi çevresel değişikliği fark ettiniz?</h3>
+<!-- Option Grid (Clickable Cards) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<!-- Option 1: Selected State -->
+<div class="group relative p-6 rounded-lg bg-surface-variant border-2 border-primary biolume-active cursor-pointer transition-all duration-300">
+<div class="flex justify-between items-start mb-6">
+<div class="w-12 h-12 rounded-full bg-primary-container/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">thermostat</span>
+</div>
+<span class="material-symbols-outlined text-primary">check_circle</span>
+</div>
+<h4 class="text-lg font-bold text-on-surface mb-2">Artan Sıcaklık</h4>
+<p class="text-sm text-on-surface-variant">Standart serinleme aylarında alışılmadık derecede yüksek sıcak hava dalgaları.</p>
+</div>
+<!-- Option 2: Default State -->
+<div class="group relative p-6 rounded-lg bg-surface-container border border-outline-variant/20 hover:bg-surface-container-high transition-all duration-300 cursor-pointer">
+<div class="flex justify-between items-start mb-6">
+<div class="w-12 h-12 rounded-full bg-surface-container-highest flex items-center justify-center group-hover:bg-primary-container/10 transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">water_drop</span>
+</div>
+</div>
+<h4 class="text-lg font-bold text-on-surface mb-2">Düzensiz Yağışlar</h4>
+<p class="text-sm text-on-surface-variant">Aniden bastıran şiddetli su baskınlarını takip eden uzun kurak dönemler.</p>
+</div>
+<!-- Option 3: Default State -->
+<div class="group relative p-6 rounded-lg bg-surface-container border border-outline-variant/20 hover:bg-surface-container-high transition-all duration-300 cursor-pointer">
+<div class="flex justify-between items-start mb-6">
+<div class="w-12 h-12 rounded-full bg-surface-container-highest flex items-center justify-center group-hover:bg-primary-container/10 transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">nest_eco_leaf</span>
+</div>
+</div>
+<h4 class="text-lg font-bold text-on-surface mb-2">Biyoçeşitlilik Kaybı</h4>
+<p class="text-sm text-on-surface-variant">Yerel kuş popülasyonlarında ve polen taşıyıcılarda fark edilir azalma.</p>
+</div>
+<!-- Option 4: Default State -->
+<div class="group relative p-6 rounded-lg bg-surface-container border border-outline-variant/20 hover:bg-surface-container-high transition-all duration-300 cursor-pointer">
+<div class="flex justify-between items-start mb-6">
+<div class="w-12 h-12 rounded-full bg-surface-container-highest flex items-center justify-center group-hover:bg-primary-container/10 transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">air</span>
+</div>
+</div>
+<h4 class="text-lg font-bold text-on-surface mb-2">Hava Kalitesi Değişimleri</h4>
+<p class="text-sm text-on-surface-variant">Yoğun trafik saatlerinde artan toz veya görünürlük değişiklikleri.</p>
+</div>
+</div>
+</div>
+<!-- Action Navigation -->
+<div class="flex items-center justify-between pt-6">
+<button class="flex items-center gap-2 text-on-surface-variant hover:text-on-surface transition-colors font-bold tracking-tight">
+<span class="material-symbols-outlined">arrow_back</span>
+                        Önceki
+                    </button>
+<button class="px-10 py-4 bg-gradient-to-b from-primary to-primary-container text-on-primary font-black uppercase tracking-widest rounded-lg biolume-glow hover:scale-[1.02] active:scale-95 transition-all">
+                        Sonraki Soru
+                    </button>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full rounded-t-[24px] bg-black tonal-shift bg-emerald-900/10 mt-auto">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 py-10 w-full max-w-7xl mx-auto">
+<div class="flex flex-col gap-2 mb-6 md:mb-0 text-center md:text-left">
+<div class="text-lg font-bold text-emerald-400">EcoModern</div>
+<p class="font-['Inter'] text-sm text-emerald-100/50">© 2024 EcoModern. Biyolüminesans Ormanı Koruyoruz.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="text-emerald-100/50 hover:text-emerald-300 text-sm transition-all" href="#">Gizlilik Politikası</a>
+<a class="text-emerald-100/50 hover:text-emerald-300 text-sm transition-all" href="#">Hizmet Şartları</a>
+<a class="text-emerald-100/50 hover:text-emerald-300 text-sm transition-all" href="#">Sürdürülebilirlik Raporu</a>
+<a class="text-emerald-100/50 hover:text-emerald-300 text-sm transition-all" href="#">Bize Ulaşın</a>
+</div>
+</div>
+</footer>
+</body></html>
