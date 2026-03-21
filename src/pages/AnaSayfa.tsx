@@ -110,45 +110,6 @@ export default function AnaSayfa() {
           </div>
         </div>
 
-        {/* Focus Bio-Regions (From Stitch) */}
-        <div className="max-w-7xl mx-auto px-8 w-full mt-32 mb-10">
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-4">
-            <div>
-              <h2 className="text-4xl font-headline font-black text-on-surface tracking-tight mb-2">Öncelikli Biyo-Bölgeler</h2>
-              <p className="text-on-surface-variant">Hemen katılım gerektiren güncel aktif restorasyon bölgeleri.</p>
-            </div>
-            <Link to="/harita" className="no-underline text-primary font-bold flex items-center gap-2 hover:gap-3 transition-all">
-              Tüm Bölgeleri Gör <span className="material-symbols-outlined">chevron_right</span>
-            </Link>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Bento Card 1 */}
-            <div className="md:col-span-2 group relative h-80 rounded-lg overflow-hidden glass-card border border-outline-variant/10">
-              <img alt="Ebedi Yeşillik" className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCg61Bj70XVaOqWgIOLOWst-rsPGG1Iw5q28F0pNP2w4A65zIcW_4xdNFXSWz6AZD-89vK7g3o5lS_DCIufJEvMkaGGWTjT6Lr7wPjv_ZQzM2-zHBJpXcEgzByrf6PWz-Uyn3go3CTWPmLi2gFUZ_5-LJN_RPZgrGGfgCj2Mp1gCkv7V4oSzSpOSIasnDfqZlBretm8BrjLejtmkju2PhYDz2NSZ2y5eYtRqnCBU1vU5dIBlgurhbh_NAaWywyP9cT2t0A7uWO5CKg"/>
-              <div className="absolute inset-0 bg-gradient-to-t from-surface to-transparent"></div>
-              <div className="absolute bottom-0 left-0 p-8 w-full">
-                <span className="bg-primary/20 text-primary px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest mb-4 inline-block">Yüksek Aciliyet</span>
-                <h3 className="text-2xl font-headline font-extrabold text-on-surface">Amazonia Delta-7</h3>
-                <p className="text-on-surface-variant text-sm mt-2 max-w-md">Neon Eğreltiotu için kalan son yaşam alanı. Bu döngüde 400 yeni koruyucuya daha ihtiyaç var.</p>
-              </div>
-            </div>
-            
-            {/* Bento Card 2 */}
-            <div className="group relative h-80 rounded-lg overflow-hidden bg-surface-container border border-outline-variant/10 flex flex-col p-8 justify-between hover:border-primary/50 transition-colors">
-              <div className="w-16 h-16 rounded-lg bg-secondary/10 flex items-center justify-center">
-                <span className="material-symbols-outlined text-secondary text-3xl">water_drop</span>
-              </div>
-              <div>
-                <h3 className="text-xl font-headline font-extrabold text-on-surface">Sıvı Zekası</h3>
-                <p className="text-on-surface-variant text-sm mt-2 mb-4">Mekong havzası boyunca yeni su filtrasyon düğümleri kuruluyor.</p>
-                <Link to="/infografikler" className="inline-block w-full py-3 rounded-lg border border-outline-variant/30 text-sm font-bold text-center text-on-surface hover:bg-white/5 transition-colors uppercase tracking-widest no-underline">
-                  Verileri Gör
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
 
         {/* App Directory Section (Adapted from original features) */}
         <div className="max-w-7xl mx-auto px-8 w-full mt-24">
