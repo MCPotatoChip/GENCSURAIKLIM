@@ -1,5 +1,6 @@
 import { useState, useEffect, createContext, useContext } from "react";
 import { Routes, Route, Link, useLocation } from "react-router-dom";
+import { Analytics } from "@vercel/analytics/react";
 import AnaSayfa from "./pages/AnaSayfa";
 import Hakkinda from "./pages/Hakkinda";
 import SimulasyonSureci from "./pages/SimulasyonSureci";
@@ -209,6 +210,7 @@ export default function App() {
           </div>
         </footer>
       </div>
+      <Analytics />
     </ThemeContext.Provider>
   );
 }
