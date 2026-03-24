@@ -97,7 +97,7 @@ export default function App() {
     setIsDark((prev) => {
       const next = !prev;
       localStorage.setItem("theme", next ? "dark" : "light");
-      if (next) earnBadge('dark_mode_user');
+      setTimeout(() => earnBadge('dark_mode_user'), 10);
       return next;
     });
   };
@@ -151,7 +151,7 @@ export default function App() {
     setLang((prev) => {
       const next = prev === 'tr' ? 'en' : 'tr';
       localStorage.setItem("lang", next);
-      if (next === 'en') earnBadge('polyglot');
+      setTimeout(() => earnBadge('polyglot'), 10);
       return next;
     });
   };

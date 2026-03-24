@@ -217,6 +217,7 @@ export default function Harita() {
                                         onClick={() => {
                                             if (timelineYear >= 2100) setTimelineYear(2024);
                                             setIsPlaying(p => !p);
+                                            earnBadge('era_explorer');
                                         }}
                                         className="px-4 h-9 rounded-full bg-emerald-600 flex items-center justify-center hover:bg-emerald-500 border border-emerald-400/50 transition-colors text-white font-bold text-sm gap-1.5"
                                     >
