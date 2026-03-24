@@ -26,9 +26,9 @@ export default function Oneri() {
     totalCount: "Şu ana kadar {count} adet öneri paylaşıldı.",
     downloadJson: "JSON Olarak İndir"
   } : {
-    title1: "Competition",
+    title1: "COP31",
     title2: "Suggestions",
-    desc: "Share your competition ideas or project proposals with us. As a team, we'll evaluate them and apply to the most fitting competitions together.",
+    desc: "For us to achive success in COP31, please share your suggestions with us.",
     nameLabel: "Full Name",
     namePlaceholder: "e.g. Ayse Yilmaz",
     sugLabel: "Your Competition Idea / Suggestion",
