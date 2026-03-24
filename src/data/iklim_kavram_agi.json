@@ -1,0 +1,221 @@
+{
+    "nodes": [
+        {
+            "id": "İKLİM",
+            "label": "İKLİM",
+            "frekans": 124,
+            "kategori": "merkez"
+        },
+        {
+            "id": "SU",
+            "label": "SU",
+            "frekans": 80,
+            "kategori": "cevre"
+        },
+        {
+            "id": "TARIM",
+            "label": "TARIM",
+            "frekans": 65,
+            "kategori": "cevre"
+        },
+        {
+            "id": "KARBON",
+            "label": "KARBON",
+            "frekans": 46,
+            "kategori": "cevre"
+        },
+        {
+            "id": "KURAKLIK",
+            "label": "KURAKLIK",
+            "frekans": 42,
+            "kategori": "cevre"
+        },
+        {
+            "id": "POLİTİKA",
+            "label": "POLİTİKA",
+            "frekans": 37,
+            "kategori": "cevre"
+        },
+        {
+            "id": "SÜRDÜRÜLEBİLİRLİK",
+            "label": "SÜRDÜRÜLEBİLİRLİK",
+            "frekans": 30,
+            "kategori": "cevre"
+        },
+        {
+            "id": "ENERJİ",
+            "label": "ENERJİ",
+            "frekans": 29,
+            "kategori": "cevre"
+        },
+        {
+            "id": "ÇEVRE",
+            "label": "ÇEVRE",
+            "frekans": 23,
+            "kategori": "cevre"
+        },
+        {
+            "id": "SICAKLIK",
+            "label": "SICAKLIK",
+            "frekans": 22,
+            "kategori": "cevre"
+        },
+        {
+            "id": "VERİMLİLİK",
+            "label": "VERİMLİLİK",
+            "frekans": 20,
+            "kategori": "cevre"
+        },
+        {
+            "id": "AFET",
+            "label": "AFET",
+            "frekans": 19,
+            "kategori": "cevre"
+        },
+        {
+            "id": "YAĞIŞ",
+            "label": "YAĞIŞ",
+            "frekans": 16,
+            "kategori": "cevre"
+        },
+        {
+            "id": "KRİZ",
+            "label": "KRİZ",
+            "frekans": 15,
+            "kategori": "cevre"
+        },
+        {
+            "id": "EKOSİSTEM",
+            "label": "EKOSİSTEM",
+            "frekans": 15,
+            "kategori": "cevre"
+        },
+        {
+            "id": "YANGIN",
+            "label": "YANGIN",
+            "frekans": 14,
+            "kategori": "cevre"
+        },
+        {
+            "id": "DOĞA",
+            "label": "DOĞA",
+            "frekans": 13,
+            "kategori": "cevre"
+        },
+        {
+            "id": "ORMAN",
+            "label": "ORMAN",
+            "frekans": 13,
+            "kategori": "cevre"
+        },
+        {
+            "id": "EMİSYON",
+            "label": "EMİSYON",
+            "frekans": 13,
+            "kategori": "cevre"
+        },
+        {
+            "id": "DENİZ",
+            "label": "DENİZ",
+            "frekans": 9,
+            "kategori": "cevre"
+        }
+    ],
+    "edges": [
+        {
+            "from": "TARIM",
+            "to": "İKLİM",
+            "birlikte_gecme": 5
+        },
+        {
+            "from": "İKLİM",
+            "to": "SICAKLIK",
+            "birlikte_gecme": 3
+        },
+        {
+            "from": "İKLİM",
+            "to": "ORMAN",
+            "birlikte_gecme": 5
+        },
+        {
+            "from": "İKLİM",
+            "to": "YANGIN",
+            "birlikte_gecme": 4
+        },
+        {
+            "from": "İKLİM",
+            "to": "DOĞA",
+            "birlikte_gecme": 2
+        },
+        {
+            "from": "İKLİM",
+            "to": "KRİZ",
+            "birlikte_gecme": 4
+        },
+        {
+            "from": "İKLİM",
+            "to": "ÇEVRE",
+            "birlikte_gecme": 5
+        },
+        {
+            "from": "İKLİM",
+            "to": "YAĞIŞ",
+            "birlikte_gecme": 5
+        },
+        {
+            "from": "İKLİM",
+            "to": "POLİTİKA",
+            "birlikte_gecme": 6
+        },
+        {
+            "from": "İKLİM",
+            "to": "KARBON",
+            "birlikte_gecme": 5
+        },
+        {
+            "from": "İKLİM",
+            "to": "KURAKLIK",
+            "birlikte_gecme": 5
+        },
+        {
+            "from": "İKLİM",
+            "to": "AFET",
+            "birlikte_gecme": 4
+        },
+        {
+            "from": "İKLİM",
+            "to": "DENİZ",
+            "birlikte_gecme": 3
+        },
+        {
+            "from": "İKLİM",
+            "to": "VERİMLİLİK",
+            "birlikte_gecme": 5
+        },
+        {
+            "from": "İKLİM",
+            "to": "EKOSİSTEM",
+            "birlikte_gecme": 3
+        },
+        {
+            "from": "İKLİM",
+            "to": "ENERJİ",
+            "birlikte_gecme": 4
+        },
+        {
+            "from": "İKLİM",
+            "to": "SU",
+            "birlikte_gecme": 4
+        },
+        {
+            "from": "İKLİM",
+            "to": "SÜRDÜRÜLEBİLİRLİK",
+            "birlikte_gecme": 5
+        },
+        {
+            "from": "İKLİM",
+            "to": "EMİSYON",
+            "birlikte_gecme": 4
+        }
+    ]
+}

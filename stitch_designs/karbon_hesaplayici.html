@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-surface": "#edfaec",
+              "secondary-container": "#006d3e",
+              "primary-dim": "#5bf083",
+              "on-tertiary": "#4f6452",
+              "error-container": "#b92902",
+              "primary-container": "#0abc56",
+              "on-tertiary-fixed": "#3b503f",
+              "on-primary": "#005f28",
+              "inverse-surface": "#f0fdef",
+              "inverse-primary": "#006e2f",
+              "tertiary": "#eaffea",
+              "surface": "#061009",
+              "secondary-fixed-dim": "#81eaa7",
+              "on-primary-fixed-variant": "#006a2d",
+              "tertiary-dim": "#d6efd7",
+              "on-surface-variant": "#a1aea2",
+              "primary-fixed-dim": "#5bf083",
+              "on-background": "#edfaec",
+              "outline-variant": "#3f4b41",
+              "on-secondary": "#005f35",
+              "secondary-fixed": "#8ff8b4",
+              "on-secondary-fixed-variant": "#006a3c",
+              "surface-container-low": "#0a160e",
+              "surface-container-lowest": "#000000",
+              "secondary-dim": "#81eaa7",
+              "on-tertiary-container": "#475c4a",
+              "on-error": "#450900",
+              "error-dim": "#d53d18",
+              "primary-fixed": "#6bff8f",
+              "tertiary-fixed": "#e4fde5",
+              "primary": "#6bff8f",
+              "inverse-on-surface": "#4c584e",
+              "tertiary-container": "#d9f1da",
+              "surface-tint": "#6bff8f",
+              "on-primary-container": "#002c0f",
+              "secondary": "#8ff8b4",
+              "on-primary-fixed": "#004a1d",
+              "surface-variant": "#1a291e",
+              "surface-container-high": "#142318",
+              "surface-bright": "#1f3024",
+              "on-secondary-container": "#e2ffe7",
+              "outline": "#6c796d",
+              "background": "#061009",
+              "on-tertiary-fixed-variant": "#576d5b",
+              "surface-dim": "#061009",
+              "tertiary-fixed-dim": "#d6efd7",
+              "surface-container": "#0f1c13",
+              "on-secondary-fixed": "#004a28",
+              "surface-container-highest": "#1a291e",
+              "on-error-container": "#ffd2c8",
+              "error": "#ff7351"
+            },
+            fontFamily: {
+              "headline": ["Inter"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+        }
+        .glow-sm {
+            box-shadow: 0 0 20px rgba(107, 255, 143, 0.3);
+        }
+        .biolume-glow {
+            box-shadow: 0 0 40px rgba(107, 255, 143, 0.15);
+        }
+        .glass-panel {
+            background: rgba(26, 41, 30, 0.7);
+            backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body min-h-screen">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-emerald-950/60 backdrop-blur-xl shadow-[0_8px_32px_0_rgba(0,0,0,0.3)]">
+<div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
+<div class="text-2xl font-black text-emerald-400 flex items-center gap-2 font-['Inter'] tracking-tight">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="eco">eco</span>
+                EcoModern
+            </div>
+<div class="hidden md:flex items-center gap-8 font-['Inter'] font-bold tracking-tight">
+<a class="text-emerald-100/70 hover:text-emerald-300 transition-colors duration-300" href="#">Keşfet</a>
+<a class="text-emerald-400 border-b-2 border-emerald-400 pb-1 hover:text-emerald-300 transition-colors duration-300" href="#">Projeler</a>
+<a class="text-emerald-100/70 hover:text-emerald-300 transition-colors duration-300" href="#">Etki</a>
+<a class="text-emerald-100/70 hover:text-emerald-300 transition-colors duration-300" href="#">Topluluk</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-emerald-100/70 hover:text-emerald-300 transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 text-emerald-100/70 hover:text-emerald-300 transition-colors">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</button>
+</div>
+</div>
+</nav>
+<main class="pt-32 pb-20 px-8 max-w-7xl mx-auto">
+<!-- Header Section -->
+<header class="mb-12">
+<h1 class="text-5xl md:text-6xl font-black tracking-tight mb-4 text-on-surface">Karbon Hesaplayıcı</h1>
+<p class="text-on-surface-variant text-lg max-w-2xl leading-relaxed">
+                Enerji, mobilite ve atık tüketimi genelindeki çevresel etkinizi haritalayın. Biyolüminesans görselleştiricimiz verilerinize gerçek zamanlı olarak uyum sağlar.
+            </p>
+</header>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Left Column: Inputs Bento Grid -->
+<div class="lg:col-span-7 space-y-8">
+<!-- Energy Section -->
+<section class="bg-surface-container rounded-lg p-8 biolume-glow">
+<div class="flex items-center gap-3 mb-8">
+<div class="w-10 h-10 rounded-full bg-primary-container/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="bolt">bolt</span>
+</div>
+<h2 class="text-2xl font-bold tracking-tight">Enerji Kullanımı</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="block text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-2">Elektrik (kWh/ay)</label>
+<input class="w-full bg-surface-container-lowest border-none rounded-lg p-4 text-on-surface focus:ring-2 focus:ring-primary/40 transition-all" placeholder="250" type="number"/>
+</div>
+<div class="space-y-2">
+<label class="block text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-2">Doğal Gaz (m³)</label>
+<input class="w-full bg-surface-container-lowest border-none rounded-lg p-4 text-on-surface focus:ring-2 focus:ring-primary/40 transition-all" placeholder="15" type="number"/>
+</div>
+<div class="md:col-span-2 space-y-2">
+<label class="block text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-2">Yenilenebilir Enerji Karışımı (%)</label>
+<div class="flex items-center gap-4">
+<input class="flex-grow accent-primary h-2 rounded-full appearance-none bg-surface-container-lowest" type="range"/>
+<span class="text-primary font-bold w-12 text-right">45%</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Transport & Mobility Section -->
+<section class="bg-surface-container rounded-lg p-8">
+<div class="flex items-center gap-3 mb-8">
+<div class="w-10 h-10 rounded-full bg-secondary-container/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary" data-icon="directions_car">directions_car</span>
+</div>
+<h2 class="text-2xl font-bold tracking-tight">Ulaşım ve Mobilite</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="block text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-2">Araç Tipi</label>
+<select class="w-full bg-surface-container-lowest border-none rounded-lg p-4 text-on-surface focus:ring-2 focus:ring-primary/40 transition-all appearance-none">
+<option>Elektrikli Araç</option>
+<option>Hibrit (Plug-in)</option>
+<option>Benzin/Dizel</option>
+<option>Sadece Toplu Taşıma</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="block text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-2">Haftalık Mesafe (km)</label>
+<input class="w-full bg-surface-container-lowest border-none rounded-lg p-4 text-on-surface focus:ring-2 focus:ring-primary/40 transition-all" placeholder="120" type="number"/>
+</div>
+<div class="md:col-span-2 space-y-2">
+<label class="block text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-2">Yıllık Uçuşlar (Kısa/Uzun Mesafe)</label>
+<div class="grid grid-cols-2 gap-4">
+<div class="relative">
+<input class="w-full bg-surface-container-lowest border-none rounded-lg p-4 text-on-surface pl-12" placeholder="2" type="number"/>
+<span class="material-symbols-outlined absolute left-4 top-4 text-on-surface-variant text-sm" data-icon="flight_takeoff">flight_takeoff</span>
+</div>
+<div class="relative">
+<input class="w-full bg-surface-container-lowest border-none rounded-lg p-4 text-on-surface pl-12" placeholder="1" type="number"/>
+<span class="material-symbols-outlined absolute left-4 top-4 text-on-surface-variant text-sm" data-icon="travel_explore">travel_explore</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Waste & Lifestyle Section -->
+<section class="bg-surface-container-high rounded-lg p-8">
+<div class="flex items-center gap-3 mb-8">
+<div class="w-10 h-10 rounded-full bg-tertiary-container/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary-dim" data-icon="delete">delete</span>
+</div>
+<h2 class="text-2xl font-bold tracking-tight">Atık ve Yaşam Tarzı</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="bg-surface-container-lowest p-4 rounded-lg flex items-center justify-between border border-primary/10">
+<span class="font-medium text-sm">Organik atıkları kompostla</span>
+<div class="w-10 h-6 bg-primary-container rounded-full relative flex items-center px-1">
+<div class="w-4 h-4 bg-on-surface rounded-full shadow-sm ml-auto"></div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-4 rounded-lg flex items-center justify-between border border-outline-variant">
+<span class="font-medium text-sm">Bitki bazlı diyet</span>
+<div class="w-10 h-6 bg-surface-variant rounded-full relative flex items-center px-1">
+<div class="w-4 h-4 bg-on-surface-variant rounded-full shadow-sm"></div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column: Glowing Footprint Meter -->
+<div class="lg:col-span-5">
+<div class="sticky top-32">
+<div class="glass-panel rounded-lg p-10 flex flex-col items-center text-center overflow-hidden relative">
+<!-- Background Glow Effect -->
+<div class="absolute -top-20 -right-20 w-64 h-64 bg-primary/20 rounded-full blur-[100px]"></div>
+<div class="absolute -bottom-20 -left-20 w-64 h-64 bg-secondary/20 rounded-full blur-[100px]"></div>
+<span class="text-xs font-black uppercase tracking-[0.2em] text-primary mb-8">Canlı Analiz</span>
+<!-- Visual Meter -->
+<div class="relative w-72 h-72 mb-10">
+<svg class="w-full h-full -rotate-90" viewbox="0 0 100 100">
+<!-- Background Track -->
+<circle class="text-surface-container-lowest" cx="50" cy="50" fill="transparent" r="42" stroke="currentColor" stroke-width="8"></circle>
+<!-- Progress Meter -->
+<circle class="drop-shadow-[0_0_15px_rgba(107,255,143,0.6)]" cx="50" cy="50" fill="transparent" r="42" stroke="url(#gradient)" stroke-dasharray="264" stroke-dashoffset="66" stroke-linecap="round" stroke-width="8"></circle>
+<defs>
+<lineargradient id="gradient" x1="0%" x2="100%" y1="0%" y2="0%">
+<stop offset="0%" style="stop-color:#6bff8f;stop-opacity:1"></stop>
+<stop offset="100%" style="stop-color:#0abc56;stop-opacity:1"></stop>
+</lineargradient>
+</defs>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="text-6xl font-black text-on-surface leading-none">4.2</span>
+<span class="text-sm font-bold text-on-surface-variant uppercase tracking-widest mt-2">Ton CO₂e/yıl</span>
+</div>
+</div>
+<!-- Data Breakdown -->
+<div class="w-full space-y-4 mb-10">
+<div class="flex justify-between items-center text-sm">
+<span class="text-on-surface-variant">Enerji</span>
+<span class="text-on-surface font-bold">1.2 t</span>
+</div>
+<div class="h-1.5 w-full bg-surface-container-lowest rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 30%"></div>
+</div>
+<div class="flex justify-between items-center text-sm">
+<span class="text-on-surface-variant">Ulaşım</span>
+<span class="text-on-surface font-bold">2.6 t</span>
+</div>
+<div class="h-1.5 w-full bg-surface-container-lowest rounded-full overflow-hidden">
+<div class="h-full bg-secondary rounded-full" style="width: 65%"></div>
+</div>
+<div class="flex justify-between items-center text-sm">
+<span class="text-on-surface-variant">Atık</span>
+<span class="text-on-surface font-bold">0.4 t</span>
+</div>
+<div class="h-1.5 w-full bg-surface-container-lowest rounded-full overflow-hidden">
+<div class="h-full bg-emerald-700 rounded-full" style="width: 15%"></div>
+</div>
+</div>
+<button class="w-full py-4 rounded-full bg-gradient-to-b from-primary to-primary-container text-on-primary font-black uppercase tracking-widest text-sm glow-sm hover:scale-105 transition-all">
+                            İlerlemeyi ve Planı Kaydet
+                        </button>
+</div>
+<!-- Side Tip Card -->
+<div class="mt-8 bg-surface-container p-6 rounded-lg border-l-4 border-primary">
+<p class="text-sm text-on-surface-variant italic">
+                            "Yerel bir yenilenebilir enerji sağlayıcısına geçmek, Enerji ayak izinizi %60'a kadar azaltabilir."
+                        </p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full rounded-t-[24px] bg-black tonal-shift bg-emerald-900/10">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 py-10 w-full max-w-7xl mx-auto">
+<div class="mb-6 md:mb-0">
+<div class="text-lg font-bold text-emerald-400 mb-2">EcoModern</div>
+<p class="font-['Inter'] text-sm text-emerald-100/50">© 2024 EcoModern. Biyolüminesans Ormanı'nı koruyoruz.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="font-['Inter'] text-sm text-emerald-100/50 hover:text-emerald-300 transition-all" href="#">Gizlilik Politikası</a>
+<a class="font-['Inter'] text-sm text-emerald-100/50 hover:text-emerald-300 transition-all" href="#">Kullanım Koşulları</a>
+<a class="font-['Inter'] text-sm text-emerald-100/50 hover:text-emerald-300 transition-all" href="#">Sürdürülebilirlik Raporu</a>
+<a class="font-['Inter'] text-sm text-emerald-100/50 hover:text-emerald-300 transition-all" href="#">Bize Ulaşın</a>
+</div>
+</div>
+</footer>
+</body></html>

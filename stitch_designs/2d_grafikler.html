@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary-fixed": "#e4fde5",
+              "tertiary-container": "#d9f1da",
+              "primary-fixed-dim": "#5bf083",
+              "on-primary": "#005f28",
+              "error-container": "#b92902",
+              "on-tertiary-fixed": "#3b503f",
+              "surface-container-lowest": "#000000",
+              "on-primary-fixed": "#004a1d",
+              "on-primary-fixed-variant": "#006a2d",
+              "on-secondary-container": "#e2ffe7",
+              "surface-dim": "#061009",
+              "surface-container-high": "#142318",
+              "on-secondary-fixed-variant": "#006a3c",
+              "secondary-container": "#006d3e",
+              "tertiary-fixed-dim": "#d6efd7",
+              "on-tertiary-container": "#475c4a",
+              "surface-container-low": "#0a160e",
+              "primary-fixed": "#6bff8f",
+              "error-dim": "#d53d18",
+              "secondary-fixed-dim": "#81eaa7",
+              "on-error": "#450900",
+              "inverse-primary": "#006e2f",
+              "surface-tint": "#6bff8f",
+              "surface-variant": "#1a291e",
+              "surface-container": "#0f1c13",
+              "primary-container": "#0abc56",
+              "on-error-container": "#ffd2c8",
+              "secondary-dim": "#81eaa7",
+              "on-tertiary": "#4f6452",
+              "on-surface-variant": "#a1aea2",
+              "tertiary-dim": "#d6efd7",
+              "error": "#ff7351",
+              "tertiary": "#eaffea",
+              "on-secondary": "#005f35",
+              "on-background": "#edfaec",
+              "surface": "#061009",
+              "on-surface": "#edfaec",
+              "on-primary-container": "#002c0f",
+              "inverse-surface": "#f0fdef",
+              "outline": "#6c796d",
+              "secondary": "#8ff8b4",
+              "surface-container-highest": "#1a291e",
+              "inverse-on-surface": "#4c584e",
+              "primary": "#6bff8f",
+              "on-tertiary-fixed-variant": "#576d5b",
+              "background": "#061009",
+              "outline-variant": "#3f4b41",
+              "on-secondary-fixed": "#004a28",
+              "secondary-fixed": "#8ff8b4",
+              "surface-bright": "#1f3024",
+              "primary-dim": "#5bf083"
+            },
+            fontFamily: {
+              "headline": ["Inter"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(26, 41, 30, 0.6);
+            backdrop-filter: blur(12px);
+        }
+        .biolume-glow:hover {
+            box-shadow: 0 0 20px rgba(107, 255, 143, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body min-h-screen">
+<!-- TopNavBar (Shared Component) -->
+<nav class="sticky top-0 w-full z-50 bg-emerald-950/60 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.3)] border-none bg-gradient-to-b from-emerald-900/20 to-transparent">
+<div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
+<div class="text-2xl font-extrabold text-emerald-400 flex items-center gap-2 font-['Inter'] tracking-tight">
+<span class="material-symbols-outlined text-primary" data-icon="eco">eco</span>
+                EcoVision
+            </div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-emerald-100/70 hover:text-emerald-100 transition-colors font-bold" href="#">Impact</a>
+<a class="text-emerald-400 border-b-2 border-emerald-400 pb-1 font-bold" href="#">Projects</a>
+<a class="text-emerald-100/70 hover:text-emerald-100 transition-colors font-bold" href="#">Education</a>
+<a class="text-emerald-100/70 hover:text-emerald-100 transition-colors font-bold" href="#">Community</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="hover:bg-emerald-400/10 rounded-full transition-all p-2 active:scale-95 duration-200">
+<span class="material-symbols-outlined text-emerald-100/70" data-icon="notifications">notifications</span>
+</button>
+<button class="hover:bg-emerald-400/10 rounded-full transition-all p-2 active:scale-95 duration-200">
+<span class="material-symbols-outlined text-emerald-100/70" data-icon="account_circle">account_circle</span>
+</button>
+<button class="bg-gradient-to-r from-primary to-primary-container text-on-primary-container px-6 py-2 rounded-full font-bold active:scale-95 duration-200 shadow-lg shadow-primary/20">
+                    Join Movement
+                </button>
+</div>
+</div>
+</nav>
+<main class="max-w-7xl mx-auto px-6 py-12">
+<!-- Hero Header -->
+<header class="mb-16">
+<h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-4 text-on-surface">
+                İklim <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Trendleri</span>
+</h1>
+<p class="text-lg text-on-surface-variant max-w-2xl">
+                Dünyamızın nabzını tutan gerçek zamanlı veriler. 2D grafikler ve derinlemesine analizlerle küresel ısınma, CO2 emisyonları ve biyolojik çeşitlilik kaybını takip edin.
+            </p>
+</header>
+<!-- Bento Grid Panel -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Main Temperature Chart -->
+<div class="md:col-span-8 glass-card rounded-lg p-8 relative overflow-hidden group">
+<div class="flex justify-between items-center mb-10">
+<div>
+<h3 class="text-xl font-bold mb-1">Küresel Sıcaklık Değişimi</h3>
+<p class="text-sm text-on-surface-variant">1880 - 2024 Arası Anomaliler (°C)</p>
+</div>
+<div class="flex gap-2">
+<span class="px-3 py-1 bg-primary/20 text-primary text-xs font-bold rounded-full border border-primary/20">CANLI</span>
+</div>
+</div>
+<!-- Simulated Line Chart -->
+<div class="h-64 flex items-end justify-between gap-1 relative">
+<div class="absolute inset-0 flex flex-col justify-between pointer-events-none opacity-10">
+<div class="border-t border-on-surface"></div>
+<div class="border-t border-on-surface"></div>
+<div class="border-t border-on-surface"></div>
+<div class="border-t border-on-surface"></div>
+</div>
+<!-- Chart visualization bars/lines -->
+<div class="w-2 bg-primary/20 h-[10%] rounded-t-sm"></div>
+<div class="w-2 bg-primary/25 h-[15%] rounded-t-sm"></div>
+<div class="w-2 bg-primary/30 h-[12%] rounded-t-sm"></div>
+<div class="w-2 bg-primary/40 h-[22%] rounded-t-sm"></div>
+<div class="w-2 bg-primary/50 h-[30%] rounded-t-sm"></div>
+<div class="w-2 bg-primary/60 h-[28%] rounded-t-sm"></div>
+<div class="w-2 bg-primary/70 h-[45%] rounded-t-sm"></div>
+<div class="w-2 bg-primary/80 h-[55%] rounded-t-sm"></div>
+<div class="w-2 bg-primary h-[75%] rounded-t-sm shadow-[0_0_15px_rgba(107,255,143,0.4)]"></div>
+<div class="w-2 bg-secondary h-[85%] rounded-t-sm"></div>
+<div class="w-2 bg-secondary/80 h-[100%] rounded-t-sm shadow-[0_0_20px_rgba(143,248,180,0.4)]"></div>
+</div>
+<div class="mt-4 flex justify-between text-xs text-on-surface-variant">
+<span>1900</span><span>1940</span><span>1980</span><span>2024</span>
+</div>
+</div>
+<!-- Stats Card: CO2 -->
+<div class="md:col-span-4 bg-surface-container rounded-lg p-8 flex flex-col justify-between border border-outline-variant/10">
+<div>
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-secondary" data-icon="cloud">cloud</span>
+</div>
+<h3 class="text-xl font-bold mb-2">Atmosferik CO2</h3>
+<p class="text-4xl font-extrabold text-primary mb-2">421.5 <span class="text-sm font-normal text-on-surface-variant">ppm</span></p>
+<p class="text-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-error text-xs" data-icon="trending_up">trending_up</span>
+                        Geçen yıla göre %0.6 artış
+                    </p>
+</div>
+<div class="mt-8 pt-8 border-t border-outline-variant/10">
+<button class="w-full py-3 rounded-xl bg-surface-container-highest text-primary font-bold hover:bg-primary hover:text-on-primary transition-all duration-300 biolume-glow">
+                        Raporu İndir
+                    </button>
+</div>
+</div>
+<!-- Sea Level Change: Bar Chart -->
+<div class="md:col-span-6 glass-card rounded-lg p-8">
+<div class="flex items-center gap-4 mb-8">
+<span class="material-symbols-outlined text-secondary text-3xl" data-icon="waves">waves</span>
+<h3 class="text-xl font-bold">Deniz Seviyesi Yükselmesi</h3>
+</div>
+<div class="flex items-end h-40 gap-4">
+<div class="flex-1 flex flex-col items-center gap-2">
+<div class="w-full bg-primary/20 h-1/4 rounded-t-md"></div>
+<span class="text-[10px] text-on-surface-variant">1990</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-2">
+<div class="w-full bg-primary/40 h-2/5 rounded-t-md"></div>
+<span class="text-[10px] text-on-surface-variant">2000</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-2">
+<div class="w-full bg-primary/60 h-3/5 rounded-t-md"></div>
+<span class="text-[10px] text-on-surface-variant">2010</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-2">
+<div class="w-full bg-primary/80 h-4/5 rounded-t-md shadow-[0_0_10px_rgba(107,255,143,0.2)]"></div>
+<span class="text-[10px] text-on-surface-variant">2020</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-2">
+<div class="w-full bg-secondary h-full rounded-t-md shadow-[0_0_20px_rgba(143,248,180,0.3)]"></div>
+<span class="text-[10px] text-on-surface-variant">Bugün</span>
+</div>
+</div>
+</div>
+<!-- Map/Analysis Inset -->
+<div class="md:col-span-6 bg-surface-container rounded-lg p-8 relative overflow-hidden">
+<div class="relative z-10">
+<h3 class="text-xl font-bold mb-4">Bölgesel Etki Analizi</h3>
+<div class="space-y-4">
+<div class="flex items-center justify-between p-4 bg-surface-container-low rounded-xl">
+<span class="text-sm font-medium">Kuzey Kutbu</span>
+<span class="text-error font-bold">+4.2°C</span>
+</div>
+<div class="flex items-center justify-between p-4 bg-surface-container-low rounded-xl">
+<span class="text-sm font-medium">Amazon Havzası</span>
+<span class="text-primary font-bold">-%12 Nem</span>
+</div>
+<div class="flex items-center justify-between p-4 bg-surface-container-low rounded-xl">
+<span class="text-sm font-medium">Akdeniz</span>
+<span class="text-error font-bold">+1.8°C</span>
+</div>
+</div>
+</div>
+<!-- Abstract background pattern inspired by IMAGE_30 -->
+<div class="absolute right-[-10%] bottom-[-10%] opacity-20 w-64 h-64">
+<img class="w-full h-full object-cover rounded-full blur-3xl" data-alt="Abstract green digital circuit patterns representing data analysis" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAkkrqbWsKmjErFMMhm3uq_mJ0_qKv-N9b5RKKkAp4GB5H6x4qQUVQbIGMSLVKE1W6l-hZGYvcJYK4kQFo51_kd2UQK486PNyBCNXapyFfG2z5cbRjUWDE0eTeJmmiMnWGc8oQ4pXJ2s-ZezxW3HWK57SYeci-n4_iq19RHrQwbi9AeiAIe42xRATiWEW3C-UdFQdxF7NJBl8LDeOLYH2MxcnVwlbvUjA7hA-2Sai-OLcK-uJEZNim2582k2wWV54mW6QZ0F0KyUw"/>
+</div>
+</div>
+<!-- Featured Analysis Card -->
+<div class="md:col-span-12 mt-8">
+<div class="relative w-full aspect-[21/9] md:aspect-[32/10] rounded-xl overflow-hidden group">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Mist-covered green mountains with a futuristic transparent data overlay" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEJuJHF4ZvE_1e7uy3UDjSQhJhU4YlJGOD1OIKQlCEZxN3hVH0WrE-FN-13qP2Q9kl4nNv3csPVG37UabM9efHWWwhm-AawcKKcWP5pesZumuKRUA0VaLdcKbR14s9FqP9KH8AP5tOGyoOD9TeCH6q6p51Ggxe_TUuBmm4CggoM-V5u0nK6wuomP_LdLJDyB0K95wyEJGVyDsDzt3RxvbKNLV5Sd8HNyo0deo_3akNjYxSV2y-kJDGPJEw8RW2wsPH4hpB6n2iEuQ"/>
+<div class="absolute inset-0 bg-gradient-to-r from-surface-container-lowest to-transparent"></div>
+<div class="absolute inset-0 p-12 flex flex-col justify-center max-w-xl">
+<div class="inline-flex items-center gap-2 px-3 py-1 bg-primary/20 text-primary text-xs font-bold rounded-full mb-6 w-max">
+<span class="material-symbols-outlined text-xs" data-icon="auto_awesome">auto_awesome</span>
+                            AI ÖNGÖRÜSÜ
+                        </div>
+<h2 class="text-3xl font-bold mb-4">2030 Karbon Nötr Yolculuğu</h2>
+<p class="text-on-surface-variant mb-8">
+                            Mevcut emisyon trendleri, yenilenebilir enerjiye geçiş hızıyla birleştiğinde, hedeflenen limitlerin %15 altında kalma riskini gösteriyor.
+                        </p>
+<div class="flex gap-4">
+<button class="bg-primary text-on-primary px-8 py-3 rounded-full font-bold biolume-glow transition-all">Senaryoyu İncele</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer (Shared Component) -->
+<footer class="bg-emerald-950 w-full py-12 mt-20">
+<div class="bg-emerald-900/30 h-px w-full mb-8"></div>
+<div class="max-w-7xl mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="text-lg font-bold text-emerald-400 font-['Inter']">EcoVision</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="text-emerald-100/60 hover:text-emerald-400 transition-transform hover:translate-x-1 font-['Inter'] text-sm" href="#">Sustainability Report</a>
+<a class="text-emerald-100/60 hover:text-emerald-400 transition-transform hover:translate-x-1 font-['Inter'] text-sm" href="#">Carbon Transparency</a>
+<a class="text-emerald-100/60 hover:text-emerald-400 transition-transform hover:translate-x-1 font-['Inter'] text-sm" href="#">Privacy Policy</a>
+<a class="text-emerald-100/60 hover:text-emerald-400 transition-transform hover:translate-x-1 font-['Inter'] text-sm" href="#">Terms of Service</a>
+</div>
+<div class="text-emerald-100/60 font-['Inter'] text-sm">
+                © 2024 EcoVision Digital Ecosystem. Protected by Earth.
+            </div>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary-fixed-dim": "#d6efd7",
+              "surface-container-highest": "#1a291e",
+              "surface-container-lowest": "#000000",
+              "outline-variant": "#3f4b41",
+              "on-primary-fixed-variant": "#006a2d",
+              "on-background": "#edfaec",
+              "on-primary-fixed": "#004a1d",
+              "tertiary": "#eaffea",
+              "surface": "#061009",
+              "primary-container": "#0abc56",
+              "inverse-on-surface": "#4c584e",
+              "tertiary-fixed": "#e4fde5",
+              "tertiary-dim": "#d6efd7",
+              "surface-container-high": "#142318",
+              "on-error": "#450900",
+              "primary-dim": "#5bf083",
+              "on-error-container": "#ffd2c8",
+              "on-surface-variant": "#a1aea2",
+              "secondary-fixed": "#8ff8b4",
+              "background": "#061009",
+              "on-surface": "#edfaec",
+              "secondary-dim": "#81eaa7",
+              "on-secondary": "#005f35",
+              "surface-dim": "#061009",
+              "secondary-container": "#006d3e",
+              "primary-fixed-dim": "#5bf083",
+              "tertiary-container": "#d9f1da",
+              "surface-container": "#0f1c13",
+              "outline": "#6c796d",
+              "primary": "#6bff8f",
+              "on-primary": "#005f28",
+              "on-primary-container": "#002c0f",
+              "surface-bright": "#1f3024",
+              "on-tertiary-container": "#475c4a",
+              "inverse-surface": "#f0fdef",
+              "on-secondary-container": "#e2ffe7",
+              "error-dim": "#d53d18",
+              "error": "#ff7351",
+              "surface-container-low": "#0a160e",
+              "secondary-fixed-dim": "#81eaa7",
+              "surface-tint": "#6bff8f",
+              "secondary": "#8ff8b4",
+              "on-secondary-fixed-variant": "#006a3c",
+              "on-tertiary-fixed": "#3b503f",
+              "surface-variant": "#1a291e",
+              "error-container": "#b92902",
+              "on-tertiary-fixed-variant": "#576d5b",
+              "primary-fixed": "#6bff8f",
+              "on-tertiary": "#4f6452",
+              "inverse-primary": "#006e2f",
+              "on-secondary-fixed": "#004a28"
+            },
+            fontFamily: {
+              "headline": ["Inter"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #061009;
+            color: #edfaec;
+        }
+        .glass-panel {
+            background: rgba(26, 41, 30, 0.6);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .biolume-glow {
+            box-shadow: 0 0 40px rgba(107, 255, 143, 0.1);
+        }
+    </style>
+</head>
+<body class="font-body selection:bg-primary selection:text-on-primary">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-emerald-950/60 backdrop-blur-xl shadow-[0_20px_40px_rgba(0,0,0,0.4)]">
+<div class="flex justify-between items-center px-8 h-20 max-w-screen-2xl mx-auto">
+<div class="text-2xl font-black text-emerald-400 tracking-tighter">Biolume Climate</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-inter tracking-tight font-bold text-sm uppercase text-emerald-100/70 hover:text-emerald-100 transition-all duration-300" href="#">Keşfet</a>
+<a class="font-inter tracking-tight font-bold text-sm uppercase text-emerald-100/70 hover:text-emerald-100 transition-all duration-300" href="#">Projeler</a>
+<a class="font-inter tracking-tight font-bold text-sm uppercase text-emerald-100/70 hover:text-emerald-100 transition-all duration-300" href="#">Etki</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 hover:bg-emerald-800/40 transition-all duration-300 rounded-full scale-95 active:scale-90 text-emerald-400">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 hover:bg-emerald-800/40 transition-all duration-300 rounded-full scale-95 active:scale-90 text-emerald-400">
+<span class="material-symbols-outlined">search</span>
+</button>
+<button class="p-2 hover:bg-emerald-800/40 transition-all duration-300 rounded-full scale-95 active:scale-90 text-emerald-400">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+</div>
+</nav>
+<main class="pt-32 pb-24 px-6 md:px-12 lg:px-24 max-w-7xl mx-auto space-y-24">
+<!-- Hero Section -->
+<section class="relative overflow-hidden rounded-lg p-12 md:p-24 bg-surface-container">
+<div class="absolute inset-0 opacity-20" data-alt="Abstract green glowing energy field" style="background-image: radial-gradient(circle at 50% 50%, #6bff8f 0%, transparent 70%);"></div>
+<div class="relative z-10 max-w-3xl">
+<span class="text-primary font-bold tracking-[0.2em] uppercase text-sm mb-6 block">Hakkımızda</span>
+<h1 class="text-5xl md:text-7xl font-extrabold tracking-tight text-on-surface mb-8">GençŞura | İklim</h1>
+<p class="text-xl md:text-2xl text-on-surface-variant leading-relaxed">Geleceği şekillendiren genç zihinler için sürdürülebilir bir dünya vizyonu. Doğanın ritmiyle teknolojinin gücünü birleştiriyoruz.</p>
+</div>
+</section>
+<!-- Projenin Tanıtımı (Bento Grid) -->
+<section class="space-y-10">
+<div class="flex items-end justify-between">
+<h2 class="text-3xl md:text-4xl font-bold tracking-tight">Projenin Tanıtımı</h2>
+<div class="h-px bg-outline-variant flex-grow ml-8 mb-3 opacity-30"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+<!-- Main Intro Card -->
+<div class="md:col-span-8 glass-panel rounded-lg p-10 biolume-glow flex flex-col justify-between group">
+<div>
+<span class="material-symbols-outlined text-primary text-4xl mb-6" data-weight="fill">eco</span>
+<h3 class="text-2xl font-bold mb-4">Dijital Bir Ekosistem</h3>
+<p class="text-on-surface-variant leading-relaxed text-lg">
+                            GençŞura | İklim, sadece bir bilgi platformu değil; gençlerin iklim kriziyle mücadelede aktif rol almasını sağlayan yaşayan bir topluluktur. Bioluminescent tasarım felsefemizle, bilginin karanlıkta parlayan bir ışık olmasını hedefliyoruz.
+                        </p>
+</div>
+<div class="mt-12 flex gap-4">
+<span class="px-4 py-2 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider">İnovasyon</span>
+<span class="px-4 py-2 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider">Eğitim</span>
+</div>
+</div>
+<!-- Secondary Visual Card -->
+<div class="md:col-span-4 rounded-lg overflow-hidden bg-surface-container-highest flex items-center justify-center p-8 relative group">
+<div class="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent"></div>
+<div class="relative z-10 text-center">
+<div class="text-6xl font-black text-primary mb-2">50K+</div>
+<div class="text-on-surface-variant font-medium">Aktif Genç Gönüllü</div>
+</div>
+<div class="absolute bottom-4 right-4">
+<span class="material-symbols-outlined text-primary/30 text-6xl">groups</span>
+</div>
+</div>
+<!-- Statistics Row -->
+<div class="md:col-span-4 glass-panel rounded-lg p-8 space-y-4">
+<h4 class="text-primary font-bold">Stratejik Odak</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">Yerel yönetimlerle işbirliği içinde, gençlerin karar alma mekanizmalarına katılımını sağlıyoruz.</p>
+</div>
+<div class="md:col-span-8 glass-panel rounded-lg p-8 flex items-center justify-between">
+<div class="flex -space-x-4">
+<div class="w-12 h-12 rounded-full border-2 border-surface bg-emerald-800" data-alt="User avatar placeholder"></div>
+<div class="w-12 h-12 rounded-full border-2 border-surface bg-emerald-700" data-alt="User avatar placeholder"></div>
+<div class="w-12 h-12 rounded-full border-2 border-surface bg-emerald-600" data-alt="User avatar placeholder"></div>
+<div class="w-12 h-12 rounded-full border-2 border-surface bg-emerald-500 flex items-center justify-center text-xs font-bold">+12</div>
+</div>
+<p class="text-on-surface font-semibold">Proje Ortaklarımız &amp; Paydaşlar</p>
+<span class="material-symbols-outlined text-primary">arrow_forward</span>
+</div>
+</div>
+</section>
+<!-- Misyonumuz Section -->
+<section class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="relative">
+<div class="aspect-square rounded-lg bg-surface-container overflow-hidden relative">
+<img alt="Young activists planting trees" class="w-full h-full object-cover opacity-60 grayscale hover:grayscale-0 transition-all duration-700" data-alt="Young people planting small trees in a forest area" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXZiyjDZXju6F5UrOUSciij1fQEiKnC9p2jJDRPJYwkbdMe6UiQftDnakIvlIqUzZGk7XnpQsC3OHXaHJKPRkwcCrK6KIXSusK7hGT-0Nc949MkE1PcgBgWs6-9SBbK5CTNz3FfWt_3HSBqkX1p-ZN5PwEeDdx8MxHgKYsgGkrABEMdccqNZC0sgRhju_ZkWDJahxOsFpeY60cpkqGNd5osjqQuI76k7rfJ0dbzPW1ejydLF6x4cG7jMCs-BYQyIxhbxqXBFek2Vw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent"></div>
+</div>
+<div class="absolute -bottom-8 -right-8 w-48 h-48 glass-panel rounded-lg p-6 flex flex-col justify-center items-center text-center shadow-xl">
+<span class="material-symbols-outlined text-primary text-4xl mb-2" data-weight="fill">verified</span>
+<span class="text-xs font-bold uppercase tracking-widest text-on-surface">Onaylanmış Etki</span>
+</div>
+</div>
+<div class="space-y-8">
+<h2 class="text-4xl font-bold tracking-tight">Misyonumuz</h2>
+<div class="space-y-6">
+<div class="flex gap-6 items-start">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-primary">psychology</span>
+</div>
+<div>
+<h4 class="text-xl font-bold mb-2">Bilinç Dönüşümü</h4>
+<p class="text-on-surface-variant">İklim krizini sadece bir sorun olarak değil, bir dönüşüm fırsatı olarak görmeyi öğretiyoruz.</p>
+</div>
+</div>
+<div class="flex gap-6 items-start">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-primary">bolt</span>
+</div>
+<div>
+<h4 class="text-xl font-bold mb-2">Eylem Odaklılık</h4>
+<p class="text-on-surface-variant">Teorik bilgiyi pratik saha çalışmaları ve dijital aktivizm araçlarıyla birleştiriyoruz.</p>
+</div>
+</div>
+<div class="flex gap-6 items-start">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-primary">public</span>
+</div>
+<div>
+<h4 class="text-xl font-bold mb-2">Küresel Bağlantı</h4>
+<p class="text-on-surface-variant">Yerel çözümleri küresel iklim ağlarıyla buluşturarak etkinin çapını genişletiyoruz.</p>
+</div>
+</div>
+</div>
+<button class="mt-8 px-10 py-4 bg-gradient-to-r from-primary to-primary-container text-on-primary-container font-bold rounded-lg shadow-[0_0_20px_rgba(107,255,143,0.3)] hover:scale-105 transition-transform">
+                    Bize Katılın
+                </button>
+</div>
+</section>
+<!-- Values Cards -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="bg-surface-container rounded-lg p-8 border-l-4 border-primary/40">
+<h5 class="text-lg font-bold mb-3">Şeffaflık</h5>
+<p class="text-sm text-on-surface-variant">Tüm verilerimizi ve etki raporlarımızı açık kaynak olarak paylaşıyoruz.</p>
+</div>
+<div class="bg-surface-container rounded-lg p-8 border-l-4 border-primary/40">
+<h5 class="text-lg font-bold mb-3">Kapsayıcılık</h5>
+<p class="text-sm text-on-surface-variant">Dil, din, ırk ayrımı gözetmeksizin her gencin sesine alan açıyoruz.</p>
+</div>
+<div class="bg-surface-container rounded-lg p-8 border-l-4 border-primary/40">
+<h5 class="text-lg font-bold mb-3">Sürdürülebilirlik</h5>
+<p class="text-sm text-on-surface-variant">Platformumuzun kendisi de düşük karbon ayak izi prensipleriyle çalışır.</p>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full rounded-t-[48px] bg-emerald-950">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 py-16 gap-8 max-w-screen-2xl mx-auto">
+<div class="flex flex-col gap-4">
+<div class="text-xl font-bold text-emerald-400">Biolume Climate</div>
+<p class="font-inter text-emerald-100/60 text-sm max-w-xs">İklim geleceğini gençlerle birlikte, bilim ve sanatın ışığında yeniden kurguluyoruz.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="font-inter text-emerald-100/50 text-sm hover:text-emerald-300 transition-colors" href="#">Gizlilik Politikası</a>
+<a class="font-inter text-emerald-100/50 text-sm hover:text-emerald-300 transition-colors" href="#">Kullanım Şartları</a>
+<a class="font-inter text-emerald-100/50 text-sm hover:text-emerald-300 transition-colors" href="#">Bize Ulaşın</a>
+<a class="font-inter text-emerald-100/50 text-sm hover:text-emerald-300 transition-colors" href="#">Sürdürülebilirlik Raporu</a>
+</div>
+<div class="font-inter text-emerald-100/60 text-sm opacity-80">
+                © 2024 Biolume Climate. Protected Ecosystem.
+            </div>
+</div>
+</footer>
+</body></html>
