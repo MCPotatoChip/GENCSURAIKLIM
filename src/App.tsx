@@ -21,7 +21,8 @@ import Oneri from "./pages/Oneri";
 import Rozetler from "./pages/Rozetler";
 import Haberler from "./pages/Haberler";
 import OnboardingTour from "./components/OnboardingTour";
-import { getAllBadges, getEarnedCount, trackPageVisit } from "./hooks/useBadges";
+import RankUpPopup from "./components/RankUpPopup";
+import { getAllBadges, getEarnedCount, trackPageVisit, getRankInfo, RankInfo } from "./hooks/useBadges";
 
 // ===== Theme & Lang Context =====
 interface AppContextType {
@@ -108,6 +109,20 @@ export default function App() {
   const hasFetchedVisits = useRef(false);
   const [badgeEarnedId, setBadgeEarnedId] = useState<string | null>(null);
   const [earnedCount, setEarnedCount] = useState(getEarnedCount);
+  const [prevEarnedCount, setPrevEarnedCount] = useState(earnedCount);
+  const [showRankPopup, setShowRankPopup] = useState<{ current: RankInfo, prev: RankInfo | null } | null>(null);
+
+  useEffect(() => {
+    if (earnedCount > prevEarnedCount) {
+      const currentRank = getRankInfo(earnedCount);
+      const prevRank = getRankInfo(prevEarnedCount);
+      
+      if (currentRank && currentRank.level !== prevRank?.level) {
+        setShowRankPopup({ current: currentRank, prev: prevRank });
+      }
+      setPrevEarnedCount(earnedCount);
+    }
+  }, [earnedCount, prevEarnedCount]);
 
   useEffect(() => {
     if (hasFetchedVisits.current) return;
@@ -192,6 +207,16 @@ export default function App() {
 
         {/* Onboarding Tour — first-visit only */}
         <OnboardingTour lang={lang} />
+
+        {/* Rank Up Popup */}
+        {showRankPopup && (
+          <RankUpPopup
+            currentRank={showRankPopup.current}
+            prevRank={showRankPopup.prev}
+            lang={lang}
+            onClose={() => setShowRankPopup(null)}
+          />
+        )}
 
         {/* Badge Toast */}
         {badgeEarnedId && (

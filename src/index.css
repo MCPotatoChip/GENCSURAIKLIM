@@ -107,7 +107,38 @@ body {
 }
 
 .glow-primary {
-  box-shadow: 0 0 20px rgba(107, 255, 143, 0.3);
+  box-shadow: 0 0 15px currentColor;
+}
+
+/* Rank Up Popup Animations */
+@keyframes flash {
+  0% { opacity: 0; }
+  10% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@keyframes rank-pop {
+  0% { transform: scale(0.5); opacity: 0; }
+  50% { transform: scale(1.1); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes pulse-glow {
+  0% { transform: scale(1); filter: brightness(1) contrast(1); }
+  50% { transform: scale(1.05); filter: brightness(1.2) contrast(1.1); }
+  100% { transform: scale(1); filter: brightness(1) contrast(1); }
+}
+
+.animate-flash {
+  animation: flash 1.5s cubic-bezier(0.2, 0, 0, 1) forwards;
+}
+
+.animate-rank-pop {
+  animation: rank-pop 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 }
 
 .biolume-glow {

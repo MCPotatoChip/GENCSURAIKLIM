@@ -77,6 +77,12 @@ export default function DailyChallenge() {
     if (!isBadgeEarned('daily_task')) {
       earnBadge('daily_task');
     }
+    if (newPts >= 50 && !isBadgeEarned('daily_task_50')) {
+      earnBadge('daily_task_50');
+    }
+    if (newPts >= 100 && !isBadgeEarned('daily_task_100')) {
+      earnBadge('daily_task_100');
+    }
     setTimeout(() => setAnimating(false), 800);
   };
 
