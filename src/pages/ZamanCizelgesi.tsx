@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useTheme } from "../App";
+import { earnBadge } from "../hooks/useBadges";
 
 interface CountdownDay {
   name: string;
@@ -211,6 +212,7 @@ export default function ZamanCizelgesi() {
                   return (
                     <div 
                       key={`day-${i}`} 
+                      onClick={() => earnBadge('era_explorer')}
                       className={`h-20 md:h-24 p-2 md:p-3 bg-surface-container-highest border ${event.borderColor} rounded-xl relative group cursor-pointer biolume-glow transition-all hover:scale-105 active:scale-95 z-10`}
                     >
                       <span className={`text-xs md:text-sm font-black ${event.color}`}>{dayStr}</span>

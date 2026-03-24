@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { useTheme } from "../App";
+import { earnBadge } from "../hooks/useBadges";
 
 interface FAQ {
   question: string;
@@ -281,7 +282,7 @@ export default function SoruAtma() {
           <input
             type="text"
             value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
+            onChange={(e) => { setSearchTerm(e.target.value); if (e.target.value.length > 2) earnBadge('faq_searcher'); }}
             placeholder={text.searchPlaceholder}
             className="w-full pl-14 pr-6 py-5 rounded-2xl border border-outline-variant/30 focus:border-primary/50 focus:ring-4 focus:ring-primary/10 bg-surface-container text-on-surface text-lg transition-all outline-none font-medium placeholder-on-surface-variant/50 shadow-lg"
           />

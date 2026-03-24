@@ -81,6 +81,7 @@ export default function Oneri() {
   };
 
   const handleDownload = () => {
+    earnBadge('data_exporter');
     const data = getSuggestions();
     const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(data, null, 2));
     const downloadAnchorNode = document.createElement("a");

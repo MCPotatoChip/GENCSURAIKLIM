@@ -166,6 +166,7 @@ export default function IklimQuizi() {
         setSelected(null);
         setShowResult(false);
         setFinished(false);
+        earnBadge('quiz_retry');
     };
 
     if (!difficulty) {

@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
 import { useTheme } from "../App";
+import { earnBadge } from "../hooks/useBadges";
 
 interface CityData {
     name: string;
@@ -230,7 +231,7 @@ export default function Karsilastirma() {
                                         <button
                                             key={m.key}
                                             ref={el => { tabsRef.current[idx] = el; }}
-                                            onClick={() => setMetric(m.key as any)}
+                                            onClick={() => { setMetric(m.key as any); earnBadge('metric_master'); }}
                                             className={`relative z-10 flex items-center justify-center gap-2 px-6 py-3 rounded-full font-bold uppercase tracking-widest text-sm transition-colors cursor-pointer ${
                                                 metric === m.key 
                                                     ? "text-on-primary" 

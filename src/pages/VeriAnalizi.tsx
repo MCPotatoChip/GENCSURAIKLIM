@@ -4,6 +4,7 @@ import {
   XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer
 } from "recharts";
 import { useTheme } from "../App";
+import { earnBadge } from "../hooks/useBadges";
 
 const tempData = [
   { year: "1970", avg: 13.2 }, { year: "1975", avg: 13.3 }, { year: "1980", avg: 13.5 },
@@ -209,7 +210,7 @@ export default function VeriAnalizi() {
                 <button
                   key={tab.key}
                   ref={el => { tabsRef.current[idx] = el; }}
-                  onClick={() => setActiveChart(tab.key)}
+                  onClick={() => { setActiveChart(tab.key); if (tab.key === 'sector') earnBadge('sector_analyst'); }}
                   className={`relative z-10 px-5 py-2.5 rounded-xl text-xs font-black uppercase tracking-widest transition-colors flex items-center gap-2 ${
                     activeChart === tab.key
                       ? "text-on-primary"
