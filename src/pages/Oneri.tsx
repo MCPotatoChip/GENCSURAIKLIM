@@ -11,9 +11,9 @@ export default function Oneri() {
   const [messages, setMessages] = useState<any[]>([]);
 
   const text = lang === 'tr' ? {
-    title1: "Yarışma",
+    title1: "COP31",
     title2: "Önerileriniz",
-    desc: "Katılmak istediğiniz yarışmalar veya proje fikirleriniz için önerilerinizi bizimle paylaşın. Ekip olarak değerlendirip en uygun yarışmalara birlikte başvuracağız.",
+    desc: "COP31'de başarı sağlamamız için önerilerinizi bizimle paylaşın.",
     nameLabel: "Adınız ve Soyadınız",
     namePlaceholder: "Örn. Ayşe Yılmaz",
     sugLabel: "Yarışma Öneriniz / Fikriniz",
