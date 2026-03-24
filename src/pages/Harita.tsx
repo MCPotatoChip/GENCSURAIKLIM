@@ -65,7 +65,7 @@ export default function Harita() {
         regionalAnalysis: "Bölgesel Risk Analizi",
         riskLabel: "Risk", tempLabel: "Sıcaklık Artışı", precipLabel: "Yağış Değişimi",
         impactLabel: "Tehdit Alanı", mainRiskLabel: "Ana Risk",
-        timelineLabel: "Gelecek Projeksiyonu", playLabel: "Oynat", pauseLabel: "Durdur",
+        timelineLabel: "Gelecek Projeksiyon Tahmini", playLabel: "Oynat", pauseLabel: "Durdur",
         year: "Yıl",
         scoreCard: "Türkiye Geneli Risk Skoru",
     } : {
@@ -76,7 +76,7 @@ export default function Harita() {
         regionalAnalysis: "Regional Risk Analysis",
         riskLabel: "Risk", tempLabel: "Temp Increase", precipLabel: "Precip Change",
         impactLabel: "Threat Area", mainRiskLabel: "Main Risk",
-        timelineLabel: "Future Projection", playLabel: "Play", pauseLabel: "Pause",
+        timelineLabel: "Future Estemate Projection", playLabel: "Play", pauseLabel: "Pause",
         year: "Year",
         scoreCard: "Turkey Overall Risk Score",
     };

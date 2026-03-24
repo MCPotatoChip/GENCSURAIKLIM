@@ -108,6 +108,7 @@ export function trackPageVisit(path: string) {
     if (path === '/karsilastirma') earnBadge('comparison_expert');
     if (path === '/kavram-agi') earnBadge('concept_mapper');
     if (path === '/soru-sor') earnBadge('curious_mind');
+    if (path === '/hakkinda') earnBadge('about_reader');
 
     // Check all modules badge
     if (allPaths.every(p => visited.includes(p))) earnBadge('all_modules');

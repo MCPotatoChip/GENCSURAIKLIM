@@ -145,7 +145,8 @@ export default function Haberler() {
             const cls = colorMap[article.color] ?? colorMap.blue;
             return (
               <a key={article.id} href={article.url} target="_blank" rel="noopener noreferrer"
-                className="group glass-card rounded-2xl border border-outline-variant/20 p-6 hover:border-blue-500/30 transition-all hover:shadow-[0_0_20px_rgba(59,130,246,0.1)] block no-underline">
+                 onClick={() => earnBadge('eco_reader')}
+                 className="group glass-card rounded-2xl border border-outline-variant/20 p-6 hover:border-blue-500/30 transition-all hover:shadow-[0_0_20px_rgba(59,130,246,0.1)] block no-underline">
                 <div className="flex items-start gap-4">
                   <div className={`w-10 h-10 flex-shrink-0 rounded-xl flex items-center justify-center border ${cls}`}>
                     <span className="material-symbols-outlined text-xl" style={{ fontVariationSettings: "'FILL' 1" }}>{article.icon}</span>
