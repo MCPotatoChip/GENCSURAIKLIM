@@ -152,6 +152,16 @@ export default function IklimQuizi() {
     const nextQuestion = () => {
         if (currentQ + 1 >= questions.length) {
             setFinished(true);
+            const pointsMap = { easy: 10, medium: 20, hard: 30 };
+            if (difficulty) {
+                const addedPoints = pointsMap[difficulty];
+                const currentPoints = parseInt(localStorage.getItem('gencsura_points') || '0', 10);
+                localStorage.setItem('gencsura_points', String(currentPoints + addedPoints));
+            }
+            // Trigger badges once
+            earnBadge('quiz_master');
+            const pct = Math.round((score / questions.length) * 100);
+            if (pct === 100) earnBadge('quiz_perfect');
         } else {
             setCurrentQ((q) => q + 1);
             setSelected(null);
@@ -211,9 +221,6 @@ export default function IklimQuizi() {
 
     if (finished) {
         const pct = Math.round((score / questions.length) * 100);
-        // Badge triggers
-        earnBadge('quiz_master');
-        if (pct === 100) earnBadge('quiz_perfect');
         return (
             <div className="w-full">
                 <main className="min-h-screen pt-32 pb-20 px-6 max-w-4xl mx-auto flex flex-col items-center gap-12 text-center animate-scale-in">
@@ -229,7 +236,7 @@ export default function IklimQuizi() {
                         </h1>
                         <p className="text-xl text-on-surface-variant mb-12">{text.level}: {difficultyMap[difficulty].label}</p>
                         
-                        <div className="flex justify-center gap-12 mb-16">
+                        <div className="flex justify-center gap-12 mb-16 flex-wrap">
                             <div>
                                 <div className="text-6xl font-black text-primary font-headline mb-2">{score}<span className="text-3xl text-on-surface-variant">/{questions.length}</span></div>
                                 <div className="text-xs font-bold uppercase tracking-widest text-on-surface-variant">{text.correctAnswers}</div>
@@ -237,6 +244,10 @@ export default function IklimQuizi() {
                             <div>
                                 <div className="text-6xl font-black text-secondary font-headline mb-2">{pct}%</div>
                                 <div className="text-xs font-bold uppercase tracking-widest text-on-surface-variant">{text.successRate}</div>
+                            </div>
+                            <div>
+                                <div className="text-6xl font-black text-amber-400 font-headline mb-2">+{difficulty === 'hard' ? 30 : difficulty === 'medium' ? 20 : 10}</div>
+                                <div className="text-xs font-bold uppercase tracking-widest text-on-surface-variant">{lang === 'tr' ? 'Kazanılan Puan' : 'Points Earned'}</div>
                             </div>
                         </div>
 

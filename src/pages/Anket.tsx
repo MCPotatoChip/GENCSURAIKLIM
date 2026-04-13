@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useTheme } from "../App";
 import { earnBadge } from "../hooks/useBadges";
+import { supabase } from "../lib/supabaseClient";
 
 interface SurveyAnswers {
   [key: string]: string;
@@ -138,7 +139,7 @@ export default function Anket() {
     }
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (Object.keys(answers).length < surveyQuestions.length) {
       alert(text.alertAll);
       return;
@@ -152,8 +153,17 @@ export default function Anket() {
         answer: answers[sq.id as keyof typeof answers] || "No Answer",
       })),
     };
+    
+    // Fallback local storage
     const prev = JSON.parse(localStorage.getItem("anket_responses") || "[]") as object[];
     localStorage.setItem("anket_responses", JSON.stringify([...prev, response]));
+
+    // Secure database saving
+    try {
+      await supabase.from("surveys").insert([{ answers: response }]);
+    } catch (err) {
+      console.warn("Could not save to Supabase", err);
+    }
 
     setSubmitted(true);
     earnBadge('survey_done');

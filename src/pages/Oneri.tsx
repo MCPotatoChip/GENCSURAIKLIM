@@ -1,6 +1,7 @@
 import { useState, useEffect, FormEvent } from "react";
 import { useTheme } from "../App";
 import { earnBadge } from "../hooks/useBadges";
+import { supabase } from "../lib/supabaseClient";
 
 export default function Oneri() {
   const { lang } = useTheme();
@@ -42,36 +43,59 @@ export default function Oneri() {
     downloadJson: "Download as JSON"
   };
 
-  const getSuggestions = () => {
-    const stored = localStorage.getItem("oneri_responses");
-    if (!stored) {
+  const getSuggestions = async () => {
+    try {
+      const { data } = await supabase
+        .from("suggestions")
+        .select("*")
+        .order("created_at", { ascending: false });
+      
+      const parsedData = data ? data.map((d: any) => ({
+        name: d.name,
+        suggestion: d.suggestion,
+        date: d.created_at
+      })) : [];
+      
+      if (parsedData.length === 0) {
+        // Fallback or old data merge
+        const stored = localStorage.getItem("oneri_responses");
+        if (stored) return JSON.parse(stored);
+      }
+      return parsedData;
+    } catch {
       return [];
     }
-    return JSON.parse(stored);
   };
 
   useEffect(() => {
-    setMessages(getSuggestions());
+    getSuggestions().then(data => {
+      setMessages(data);
+      setCount(data.length);
+    });
   }, []);
 
-  const [count, setCount] = useState(() => getSuggestions().length);
+  const [count, setCount] = useState(0);
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     if (!name || !suggestion) return;
 
-    const current = getSuggestions();
     const newEntry = {
       name,
       suggestion,
       date: new Date().toISOString()
     };
-    const updated = [newEntry, ...current];
-    localStorage.setItem("oneri_responses", JSON.stringify(updated));
+    
+    // Optimistic UI update
+    const updated = [newEntry, ...messages];
     setMessages(updated);
     setCount(updated.length);
     setSubmitted(true);
     earnBadge('suggestion_sent');
+    
+    // Save to Supabase
+    await supabase.from("suggestions").insert([{ name, suggestion }]);
+
     setName("");
     setSuggestion("");
 
@@ -82,7 +106,7 @@ export default function Oneri() {
 
   const handleDownload = () => {
     earnBadge('data_exporter');
-    const data = getSuggestions();
+    const data = messages;
     const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(data, null, 2));
     const downloadAnchorNode = document.createElement("a");
     downloadAnchorNode.setAttribute("href", dataStr);

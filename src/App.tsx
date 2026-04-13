@@ -20,9 +20,11 @@ import Grafikler from "./pages/Grafikler";
 import Oneri from "./pages/Oneri";
 import Rozetler from "./pages/Rozetler";
 import Haberler from "./pages/Haberler";
+import Admin from "./pages/Admin";
 import OnboardingTour from "./components/OnboardingTour";
 import RankUpPopup from "./components/RankUpPopup";
 import { getAllBadges, getEarnedCount, trackPageVisit, getRankInfo, RankInfo } from "./hooks/useBadges";
+import { supabase } from "./lib/supabaseClient";
 
 // ===== Theme & Lang Context =====
 interface AppContextType {
@@ -97,9 +99,9 @@ export default function App() {
     setIsDark((prev) => {
       const next = !prev;
       localStorage.setItem("theme", next ? "dark" : "light");
-      setTimeout(() => earnBadge('dark_mode_user'), 10);
       return next;
     });
+    earnBadge('dark_mode_user');
   };
 
   const [lang, setLang] = useState<'tr' | 'en'>(() => {
@@ -129,11 +131,22 @@ export default function App() {
     if (hasFetchedVisits.current) return;
     hasFetchedVisits.current = true;
     
-    // Using local storage for visit counter to avoid API rate limits/breakages
-    const currentVisits = parseInt(localStorage.getItem('iklim_visits') || '1024', 10);
-    const newVisits = currentVisits + 1;
-    localStorage.setItem('iklim_visits', newVisits.toString());
-    setVisits(newVisits);
+    const updateVisits = async () => {
+      try {
+        const { data } = await supabase.from('visitors').select('count').eq('id', 1).single();
+        if (data) {
+          const newVisits = data.count + 1;
+          setVisits(newVisits);
+          await supabase.from('visitors').update({ count: newVisits }).eq('id', 1);
+        } else {
+          setVisits(1024);
+        }
+      } catch (err) {
+        setVisits(1024);
+      }
+    };
+
+    updateVisits();
   }, []);
 
   // Listen for badge events
@@ -151,9 +164,9 @@ export default function App() {
     setLang((prev) => {
       const next = prev === 'tr' ? 'en' : 'tr';
       localStorage.setItem("lang", next);
-      setTimeout(() => earnBadge('polyglot'), 10);
       return next;
     });
+    earnBadge('polyglot');
   };
 
   useEffect(() => {
@@ -341,6 +354,7 @@ export default function App() {
               <Route path="/oneri" element={<Oneri />} />
               <Route path="/rozetler" element={<Rozetler />} />
               <Route path="/haberler" element={<Haberler />} />
+              <Route path="/yonetici" element={<Admin />} />
             </Routes>
           </div>
         </main>
